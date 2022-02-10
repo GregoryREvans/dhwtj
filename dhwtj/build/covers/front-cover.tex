@@ -1,0 +1,76 @@
+\documentclass[11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[papersize={11in, 17in}, margin=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xltxtra,fontspec,xunicode}
+\usetikzlibrary{calc}
+\defaultfontfeatures{Scale=MatchLowercase}
+\newlength{\drop}
+\pagenumbering{gobble}
+\parindent=0pt
+%\setmainfont{Bell MT}
+\setmainfont{Palatino}
+\usepackage{microtype}
+%Adobe Garamond Pro Bold
+\begin{document}
+    \begin{titlepage}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 5pt]
+                ($(current page.north west) + (0.6in,-0.6in)$)
+                rectangle
+                ($(current page.south east) + (-0.6in,0.6in)$);
+        \end{tikzpicture}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 1pt]
+                ($(current page.north west) + (0.75in,-0.75in)$)
+                rectangle
+                ($(current page.south east) + (-0.75in,0.75in)$);
+        \end{tikzpicture}
+
+        \drop=0.1\textheight
+
+        \vspace*{5\baselineskip}
+\begin{center}
+      {
+            \scalebox{0.5}[0.5]
+            {\fontsize{2.5cm}{1em}\selectfont \setmainfont{Bell MT}GREGORY ROWLAND EVANS}
+        }
+\end{center}
+
+        \vspace*{6\baselineskip}
+\begin{center}
+      {
+      	\scalebox{3}[3]
+            {\fontsize{0.65cm}{1em}\selectfont  \textbf{ḏ \ ḥ \ w \ t \ j} }
+        }
+\end{center}
+\begin{center}
+\includegraphics[scale=0.2]{name.png}
+\end{center}
+        \vspace*{2\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{2cm}{1em}\selectfont \setmainfont{Bell MT}Tragedia dell'ascolto}
+        }
+\end{center}
+        \vspace*{3.5\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1.7cm}{1em}\selectfont \setmainfont{Bell MT}2022}
+        }
+\end{center}
+        \vspace*{22\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1.7cm}{1em}\selectfont \setmainfont{Bell MT}SCORE}
+        }
+\end{center}
+
+    \end{titlepage}
+\end{document}end{document}
