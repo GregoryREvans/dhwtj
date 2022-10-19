@@ -55,11 +55,27 @@ bass_range = bass.pitch_range
 bass_range_lowest = abjad.NumberedPitch(bass_range.start_pitch)
 bass_range_highest = abjad.NumberedPitch(bass_range.stop_pitch)
 
+percussion_1 = abjad.Percussion()
+percussion_2 = abjad.Percussion()
+percussion_3 = abjad.Percussion()
+percussion_4 = abjad.Percussion()
+
+seshat = abjad.Voice(name="seshat")
+thoth = abjad.Voice(name="thoth")
+maat = abjad.Voice(name="maat")
+
 string_quartet = [
     violin_one,
     violin_two,
     viola,
     cello,
+]
+
+percussion_quartet = [
+    percussion_1,
+    percussion_2,
+    percussion_3,
+    percussion_4,
 ]
 
 full_ensemble = [
@@ -72,6 +88,8 @@ full_ensemble = [
     cello,
     bass,
 ]
+
+seshat_solo = [seshat]
 
 violin_one_clef_handler = evans.ClefHandler(
     clef="treble", add_extended_clefs=False, add_ottavas=False

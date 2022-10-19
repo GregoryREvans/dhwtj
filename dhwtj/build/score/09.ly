@@ -1,22 +1,21 @@
         \context Score = "Score"
         <<
-
             \context TimeSignatureContext = "Global Context"
             {
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
 
-                \tempo 4=108
+                \tempo 4=60
                 %! scaling time signatures
-                \time 6/16
+                \time 6/4
                 \mark \markup \bold {  }
-                s1 * 3/8
+                s1 * 3/2
                 ^ \markup {
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 5.5)
                   \concat {
-                      \abjad-metronome-mark-markup #2 #0 #1 #"108"
+                      \abjad-metronome-mark-markup #2 #0 #1 #"60"
                   }
                 }
                 %! COMMENT_MEASURE_NUMBERS
@@ -24,57 +23,98 @@
                 % [Global Context measure 2]
 
                 %! scaling time signatures
-                \time 8/16
-                s1 * 1/2
+                \time 5/4
+                s1 * 5/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 3]
 
                 %! scaling time signatures
-                \time 5/16
-                s1 * 5/16
+                \time 3/4
+                s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 4]
 
                 %! scaling time signatures
-                \time 6/16
-                s1 * 3/8
+                \time 7/4
+                s1 * 7/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 5]
 
                 %! scaling time signatures
-                \time 8/16
-                s1 * 1/2
+                \time 3/4
+                s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 6]
 
                 %! scaling time signatures
-                \time 10/16
-                s1 * 5/8
+                \time 3/4
+                s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 7]
 
                 %! scaling time signatures
-                \time 11/16
-                s1 * 11/16
+                \time 4/4
+                s1 * 1
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 8]
 
                 %! scaling time signatures
-                \time 12/16
-                s1 * 3/4
+                \time 4/4
+                s1 * 1
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 9]
 
                 %! scaling time signatures
-                \time 12/16
+                \time 4/4
+                s1 * 1
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 10]
+
+                %! scaling time signatures
+                \time 4/4
+                s1 * 1
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 11]
+
+                %! scaling time signatures
+                \time 3/4
                 s1 * 3/4
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 12]
+
+                %! scaling time signatures
+                \time 6/4
+                s1 * 3/2
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 13]
+
+                %! scaling time signatures
+                \time 5/4
+                s1 * 5/4
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 14]
+
+                \once \override Score.TimeSignature.transparent = ##t
+                \once \override MultiMeasureRest.transparent = ##t
+                \time 1/4
+                s1 * 1/8
+
+                \once \override Rest.transparent = ##t
+                r1 * 1/8
+                ^ \markup \lower #9 \with-dimensions-from \null \musicglyph #"scripts.uverylongfermata"
+                \bar "|."
 
             }
 
@@ -84,529 +124,452 @@
                 \context StaffGroup = "Staff Group"
                 <<
 
-                    \tag #'group2
+                    \tag #'voice1
                     {
 
-                        \context PianoStaff = "sub group 1"
-                        <<
+                        \context Staff = "percussion 1 staff"
+                        {
 
-                            \tag #'voice1
+                            \context Voice = "percussion 1 voice"
                             {
+                                \staff-line-count 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 1]
 
-                                \context Staff = "violin 1 staff"
-                                {
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 1" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 1" }
+                                \clef "percussion"
+                                c'4.
+                                \mf
+                                - \accent
+                                \boxed-markup "bass drum" 1
 
-                                    \context Voice = "violin 1 voice"
-                                    {
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 1]
+                                c'4.
 
-                                        %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #12 "vn. I" }
-                                        %! applying staff names and clefs
-                                        \set Staff.instrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #14 "Violin I" }
-                                        \pitchedTrill
-                                        bf'4.
-                                        \f
-                                        \startTrillSpan cs''
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 2]
+                                c'4.
 
-                                        ef'8
-                                        \p
-                                        - \tongue #2
-                                        \stopTrillSpan
+                                c'4.
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 2]
 
-                                        r8
+                                c'4
+                                - \accent
 
-                                        \times 2/3
-                                        {
+                                c'4
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            - \tongue #2
-                                            [
+                                c'4
 
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'8
-                                            - \tongue #3
-                                            ]
+                                c'4
 
-                                            r8
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 3]
 
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 3]
+                                c'4
+                                - \accent
 
-                                        \pitchedTrill
-                                        bf'4
-                                        \f
-                                        ~
-                                        \startTrillSpan cs''
+                                c'4
 
-                                        bf'16
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 4]
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 4]
 
-                                        ef'8
-                                        \p
-                                        - \tongue #3
-                                        \stopTrillSpan
+                                c'4
+                                - \accent
 
-                                        r8
+                                c'4
 
-                                        e'8
-                                        - \tongue #2
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 5]
+                                c'4
 
-                                        ef'8
-                                        - \tongue #2
+                                c'4
 
-                                        r8
+                                c'4
 
-                                        dqs'8
-                                        - \tongue #2
+                                c'4
 
-                                        r8
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 5]
 
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 6]
+                                c'4
+                                - \accent
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'8
-                                            - \tongue #3
-                                            [
+                                c'4
 
-                                            \revert Staff.Stem.stemlet-length
-                                            fqs'8
-                                            - \tongue #2
-                                            ]
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 6]
 
-                                            r8
+                                c'2.
+                                \f
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 7]
 
-                                        }
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 8]
 
-                                        fs'8
-                                        - \tongue #3
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 9]
 
-                                        r8
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 10]
 
-                                        g'8
-                                        - \tongue #3
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 7]
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 11]
 
-                                        fqs'8
-                                        - \tongue #2
+                                c'2.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 12]
 
-                                        r8
+                                c'1.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 13]
 
-                                        e'8
-                                        - \tongue #2
+                                c'1
+                                - \accent
+                                ~
 
-                                        r8
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 14]
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 6/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'16
-                                            - \tongue #3
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'16
-                                            - \tongue #2
-                                            ]
-
-                                            r32
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 8]
-
-                                        r16
-
-                                        fs'8
-                                        - \tongue #2
-
-                                        r16
-
-                                        \times 2/3
-                                        {
-
-                                            r16
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'8
-                                            - \tongue #2
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af'8
-                                            - \tongue #3
-                                            ]
-
-                                            r16
-
-                                        }
-
-                                        r16
-
-                                        gqs'8
-                                        - \tongue #2
-
-                                        r16
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 9]
-
-                                        r16
-
-                                        fs'8
-                                        - \tongue #3
-
-                                        f'16
-                                        - \tongue #3
-                                        ~
-
-                                        \times 2/3
-                                        {
-
-                                            f'16
-
-                                            r8
-
-                                            fs'8
-                                            - \tongue #2
-
-                                            r16
-
-                                        }
-
-                                        r16
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'8
-                                        - \tongue #2
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        eqs'16
-                                        - \tongue #3
-                                        ]
-                                        \bar "||"
-
-                                    }
-
-                                }
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
 
                             }
 
-                            \tag #'voice2
+                        }
+
+                    }
+
+                    \tag #'voice2
+                    {
+
+                        \context Staff = "percussion 2 staff"
+                        {
+
+                            \context Voice = "percussion 2 voice"
                             {
+                                \staff-line-count 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 1]
 
-                                \context Staff = "violin 2 staff"
-                                {
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 2" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 2" }
+                                \clef "percussion"
+                                c'4.
+                                \mf
+                                - \accent
+                                \boxed-markup "bass drum" 1
 
-                                    \context Voice = "violin 2 voice"
-                                    {
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 1]
+                                c'4.
 
-                                        %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #12 "vn. II" }
-                                        %! applying staff names and clefs
-                                        \set Staff.instrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #14 "Violin II" }
-                                        \pitchedTrill
-                                        a'4.
-                                        \f
-                                        \startTrillSpan b'
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 2]
+                                c'4.
 
-                                        e'8
-                                        \p
-                                        - \tongue #2
-                                        \stopTrillSpan
+                                c'4.
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 2]
 
-                                        r8
+                                c'4
+                                - \accent
 
-                                        f'8
-                                        - \tongue #2
+                                c'4
 
-                                        e'8
-                                        - \tongue #2
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 3]
+                                c'4
 
-                                        \pitchedTrill
-                                        a'4
-                                        \f
-                                        ~
-                                        \startTrillSpan b'
+                                c'4
 
-                                        a'16
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 3]
 
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 4]
+                                c'4
+                                - \accent
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            \p
-                                            - \tongue #2
-                                            \stopTrillSpan
-                                            [
+                                c'4
 
-                                            \revert Staff.Stem.stemlet-length
-                                            f'8
-                                            - \tongue #2
-                                            ]
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 4]
 
-                                            r8
+                                c'4
+                                - \accent
 
-                                        }
+                                c'4
 
-                                        e'8
-                                        - \tongue #2
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 5]
+                                c'4
 
-                                        \pitchedTrill
-                                        a'2
-                                        \mf
-                                        \<
-                                        - \abjad-dashed-line-with-arrow
-                                        - \baca-text-spanner-left-text "ord."
-                                        - \baca-text-spanner-right-text "scr."
-                                        - \tweak bound-details.right.padding 0.5
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                        - \tweak staff-padding 5
-                                        \startTextSpanOne
-                                        - \abjad-dashed-line-with-arrow
-                                        - \baca-text-spanner-left-text "st."
-                                        - \baca-text-spanner-right-text "sp."
-                                        - \tweak bound-details.right.padding 0.5
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                        - \tweak staff-padding 7
-                                        \startTextSpanTwo
-                                        \startTrillSpan b'
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 6]
+                                c'4
 
-                                        \pitchedTrill
-                                        bf'2
-                                        \stopTrillSpan
-                                        ~
-                                        \startTrillSpan c''
+                                c'4
 
-                                        bf'8
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 7]
+                                c'4
 
-                                        \pitchedTrill
-                                        fs'2
-                                        \stopTrillSpan
-                                        ~
-                                        \startTrillSpan g'
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 5]
 
-                                        fs'8.
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 8]
+                                c'4
+                                - \accent
 
-                                        \pitchedTrill
-                                        f'2.
-                                        \stopTrillSpan
-                                        \startTrillSpan g'
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 9]
+                                c'4
 
-                                        \pitchedTrill
-                                        b'2.
-                                        \f
-                                        \stopTextSpanOne
-                                        \stopTextSpanTwo
-                                        \stopTrillSpan
-                                        \startTrillSpan c''
-                                        \bar "||"
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 6]
 
-                                    }
+                                c'4
+                                - \accent
 
-                                }
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 7]
+
+                                c'1
+                                \f
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 8]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 9]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 10]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 11]
+
+                                c'2.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 12]
+
+                                c'1.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 13]
+
+                                c'1
+                                - \accent
+                                ~
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 14]
+
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
 
                             }
 
-                        >>
+                        }
 
                     }
 
                     \tag #'voice3
                     {
 
-                        \context Staff = "viola staff"
+                        \context Staff = "percussion 3 staff"
                         {
 
-                            \context Voice = "viola voice"
+                            \context Voice = "percussion 3 voice"
                             {
+                                \staff-line-count 1
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 1]
+                                % [percussion 3 voice measure 1]
 
                                 %! applying staff names and clefs
                                 \set Staff.shortInstrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #12 "va." }
+                                \markup { \hcenter-in #12 "pc. 3" }
                                 %! applying staff names and clefs
                                 \set Staff.instrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #14 "Viola" }
-                                \pitchedTrill
-                                a'4.
-                                \f
-                                \startTrillSpan b'
-
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 2]
-
-                                    r8
-                                    \stopTrillSpan
-
-                                    b8
-                                    \p
-                                    - \tongue #3
-
-                                    r8
-
-                                }
-
-                                c'8
-                                - \tongue #2
-
-                                b8
-                                - \tongue #3
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 3]
-
-                                \pitchedTrill
-                                a'4
-                                \f
-                                ~
-                                \startTrillSpan b'
-
-                                a'16
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 4]
-
-                                r8
-                                \stopTrillSpan
-
-                                b8
-                                \p
-                                - \tongue #3
-
-                                c'8
-                                - \tongue #2
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 5]
-
-                                \pitchedTrill
-                                a'2
+                                \markup { \hcenter-in #14 "Percussion 3" }
+                                \clef "percussion"
+                                c'4.
                                 \mf
-                                \<
-                                - \abjad-dashed-line-with-arrow
-                                - \baca-text-spanner-left-text "ord."
-                                - \baca-text-spanner-right-text "scr."
-                                - \tweak bound-details.right.padding 0.5
-                                - \tweak bound-details.right.stencil-align-dir-y #center
-                                - \tweak staff-padding 5
-                                \startTextSpanOne
-                                - \abjad-dashed-line-with-arrow
-                                - \baca-text-spanner-left-text "st."
-                                - \baca-text-spanner-right-text "sp."
-                                - \tweak bound-details.right.padding 0.5
-                                - \tweak bound-details.right.stencil-align-dir-y #center
-                                - \tweak staff-padding 7
-                                \startTextSpanTwo
-                                \startTrillSpan b'
+                                - \accent
+                                \boxed-markup "bass drum" 1
+
+                                c'4.
+
+                                c'4.
+
+                                c'4.
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 6]
+                                % [percussion 3 voice measure 2]
 
-                                \pitchedTrill
-                                f'2
-                                \stopTrillSpan
-                                ~
-                                \startTrillSpan fs'
+                                c'4
+                                - \accent
 
-                                f'8
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 7]
+                                % [percussion 3 voice measure 3]
 
-                                \pitchedTrill
-                                e'2
-                                \stopTrillSpan
-                                ~
-                                \startTrillSpan fs'
+                                c'4
+                                - \accent
 
-                                e'8.
+                                c'4
+
+                                c'4
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 8]
+                                % [percussion 3 voice measure 4]
 
-                                \pitchedTrill
-                                bf'2.
-                                \stopTrillSpan
-                                \startTrillSpan b'
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 9]
+                                % [percussion 3 voice measure 5]
 
-                                \pitchedTrill
-                                af'2.
+                                c'2.
                                 \f
-                                \stopTextSpanOne
-                                \stopTextSpanTwo
-                                \stopTrillSpan
-                                \startTrillSpan bf'
-                                \bar "||"
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 6]
+
+                                c'2.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 7]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 8]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 9]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 10]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 11]
+
+                                c'2.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 12]
+
+                                c'1.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 13]
+
+                                c'1
+                                - \accent
+                                ~
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 14]
+
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
 
                             }
 
@@ -617,349 +580,157 @@
                     \tag #'voice4
                     {
 
-                        \context Staff = "cello staff"
+                        \context Staff = "percussion 4 staff"
                         {
 
-                            \context Voice = "cello voice"
+                            \context Voice = "percussion 4 voice"
                             {
+                                \staff-line-count 1
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 1]
+                                % [percussion 4 voice measure 1]
 
                                 %! applying staff names and clefs
                                 \set Staff.shortInstrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #12 "vc." }
+                                \markup { \hcenter-in #12 "pc. 4" }
                                 %! applying staff names and clefs
                                 \set Staff.instrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #14 "Violoncello" }
-                                \pitchedTrill
-                                ef'4.
-                                \f
-                                \startTrillSpan f'
+                                \markup { \hcenter-in #14 "Percussion 4" }
+                                \clef "percussion"
+                                c'4.
+                                \mf
+                                - \accent
+                                \boxed-markup "bass drum" 1
 
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 2]
+                                c'4.
 
-                                    r8
-                                    \stopTrillSpan
+                                c'4.
 
-                                    a8
-                                    \p
-                                    - \tongue #3
-
-                                    r8
-
-                                }
-
-                                bf8
-                                - \tongue #2
-
-                                a8
-                                - \tongue #2
+                                c'4.
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 3]
+                                % [percussion 4 voice measure 2]
 
-                                \pitchedTrill
-                                ef'4
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 3]
+
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 4]
+
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 5]
+
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 6]
+
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 7]
+
+                                c'4
+                                - \accent
+
+                                c'4
+
+                                c'4
+
+                                c'4
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 8]
+
+                                c'1
                                 \f
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 9]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 10]
+
+                                c'1
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 11]
+
+                                c'2.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 12]
+
+                                c'1.
+                                - \accent
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 13]
+
+                                c'1
+                                - \accent
                                 ~
-                                \startTrillSpan f'
 
-                                ef'16
+                                c'4
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 4]
+                                % [percussion 4 voice measure 14]
 
-                                r8
-                                \stopTrillSpan
-
-                                a8
-                                \p
-                                - \tongue #3
-
-                                r8
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 5]
-
-                                bf8
-                                - \tongue #3
-
-                                a8
-                                - \tongue #2
-
-                                r8
-
-                                aqf8
-                                - \tongue #2
-
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 6]
-
-                                    r8
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b8
-                                    - \tongue #3
-                                    [
-
-                                    \revert Staff.Stem.stemlet-length
-                                    bqs8
-                                    - \tongue #2
-                                    ]
-
-                                }
-
-                                r8
-
-                                c'8
-                                - \tongue #2
-
-                                r8
-
-                                \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                    {
-                                        \new Score
-                                        \with
-                                        {
-                                            \override SpacingSpanner.spacing-increment = 0.5
-                                            proportionalNotationDuration = ##f
-                                        }
-                                        <<
-                                            \new RhythmicStaff
-                                            \with
-                                            {
-                                                \remove Time_signature_engraver
-                                                \remove Staff_symbol_engraver
-                                                \override Stem.direction = #up
-                                                \override Stem.length = 5
-                                                \override TupletBracket.bracket-visibility = ##t
-                                                \override TupletBracket.direction = #up
-                                                \override TupletBracket.minimum-length = 4
-                                                \override TupletBracket.padding = 1.25
-                                                \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                \override TupletNumber.font-size = 0
-                                                \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                tupletFullLength = ##t
-                                            }
-                                            {
-                                                c'2
-                                            }
-                                        >>
-                                        \layout
-                                        {
-                                            indent = 0
-                                            ragged-right = ##t
-                                        }
-                                    }
-                                \times 2/2
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 7]
-
-                                    \once \override Beam.grow-direction = #right
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    bf,16 * 63/32
-                                    \f
-                                    - \baca-circle-bowing
-                                    \>
-                                    [
-
-                                    \revert Staff.Stem.stemlet-length
-                                    bf,16 * 115/64
-                                    - \baca-circle-bowing
-
-                                    r16 * 91/64
-
-                                    bf,16 * 35/32
-                                    - \baca-circle-bowing
-
-                                    r16 * 29/32
-
-                                    \revert Staff.Stem.stemlet-length
-                                    bf,16 * 13/16
-                                    - \baca-circle-bowing
-                                    ]
-
-                                }
-                                \revert TupletNumber.text
-
-                                \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                    {
-                                        \new Score
-                                        \with
-                                        {
-                                            \override SpacingSpanner.spacing-increment = 0.5
-                                            proportionalNotationDuration = ##f
-                                        }
-                                        <<
-                                            \new RhythmicStaff
-                                            \with
-                                            {
-                                                \remove Time_signature_engraver
-                                                \remove Staff_symbol_engraver
-                                                \override Stem.direction = #up
-                                                \override Stem.length = 5
-                                                \override TupletBracket.bracket-visibility = ##t
-                                                \override TupletBracket.direction = #up
-                                                \override TupletBracket.minimum-length = 4
-                                                \override TupletBracket.padding = 1.25
-                                                \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                \override TupletNumber.font-size = 0
-                                                \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                tupletFullLength = ##t
-                                            }
-                                            {
-                                                c'2
-                                            }
-                                        >>
-                                        \layout
-                                        {
-                                            indent = 0
-                                            ragged-right = ##t
-                                        }
-                                    }
-                                \times 2/2
-                                {
-
-                                    \once \override Beam.grow-direction = #right
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b,16 * 15/8
-                                    - \baca-circle-bowing
-                                    [
-
-                                    r16 * 193/64
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b,16 * 63/64
-                                    - \baca-circle-bowing
-
-                                    b,16 * 51/64
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    b,16 * 11/16
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    r16 * 41/64
-                                    ]
-
-                                }
-                                \revert TupletNumber.text
-
-                                \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                    {
-                                        \new Score
-                                        \with
-                                        {
-                                            \override SpacingSpanner.spacing-increment = 0.5
-                                            proportionalNotationDuration = ##f
-                                        }
-                                        <<
-                                            \new RhythmicStaff
-                                            \with
-                                            {
-                                                \remove Time_signature_engraver
-                                                \remove Staff_symbol_engraver
-                                                \override Stem.direction = #up
-                                                \override Stem.length = 5
-                                                \override TupletBracket.bracket-visibility = ##t
-                                                \override TupletBracket.direction = #up
-                                                \override TupletBracket.minimum-length = 4
-                                                \override TupletBracket.padding = 1.25
-                                                \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                \override TupletNumber.font-size = 0
-                                                \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                tupletFullLength = ##t
-                                            }
-                                            {
-                                                c'1
-                                                ~
-                                                c'8.
-                                            }
-                                        >>
-                                        \layout
-                                        {
-                                            indent = 0
-                                            ragged-right = ##t
-                                        }
-                                    }
-                                \times 2/2
-                                {
-
-                                    \once \override Beam.grow-direction = #left
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    cqs16 * 19/32
-                                    - \baca-circle-bowing
-                                    [
-
-                                    r16 * 39/64
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    cqs16 * 39/64
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    cqs16 * 5/8
-                                    - \baca-circle-bowing
-
-                                    r16 * 43/32
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    cqs16 * 47/64
-                                    - \baca-circle-bowing
-
-                                    cqs16 * 51/64
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    cqs16 * 55/64
-                                    - \baca-circle-bowing
-
-                                    r16 * 15/16
-
-                                    cqs16 * 67/64
-                                    - \baca-circle-bowing
-
-                                    r16 * 37/32
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    cqs16 * 41/32
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    cqs16 * 91/64
-                                    - \baca-circle-bowing
-
-                                    r16 * 105/32
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    cqs16 * 29/16
-                                    - \baca-circle-bowing
-
-                                    \revert Staff.Stem.stemlet-length
-                                    cqs16 * 121/64
-                                    \p
-                                    - \baca-circle-bowing
-                                    ]
-                                    \bar "||"
-
-                                }
-                                \revert TupletNumber.text
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
 
                             }
 

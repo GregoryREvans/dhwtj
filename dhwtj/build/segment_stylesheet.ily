@@ -2,6 +2,7 @@
 \language "english"
 
 \include "score_stylesheet.ily"
+\include "../../lib.ily"
 
 \header { composer = ##f title = ##f dedication = ##f}
 

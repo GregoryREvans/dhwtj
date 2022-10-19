@@ -1,7 +1,7 @@
 \version "2.22.1"  %2.23.2
 \language "english" %! LilyPondFile
 
-\include "../score_stylesheet.ily"                                      %! LilyPondFile
+\include "../score_landscape_stylesheet.ily"                                      %! LilyPondFile
 \include "abjad.ily" %! LilyPondFile
 
 \header { %! LilyPondFile
@@ -21,20 +21,7 @@
             \include "07.ly"
             \include "08.ly"
             \include "09.ly"
-            \include "10.ly"
-            \include "11.ly"
-            \include "12.ly"
-            \include "13.ly"
-            \include "14.ly"
-            \include "15.ly"
-            \include "16.ly"
-            \include "17.ly"
-            \include "18.ly"
-            \include "19.ly"
-            \include "20.ly"
-            \include "21.ly"
-            \include "22.ly"
     	}
     >>
-%\midi{}
+%{ \midi{} %}
 }

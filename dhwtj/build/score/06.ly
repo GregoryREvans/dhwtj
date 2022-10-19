@@ -1,6 +1,5 @@
         \context Score = "Score"
         <<
-
             \context TimeSignatureContext = "Global Context"
             {
                 %! COMMENT_MEASURE_NUMBERS
@@ -9,9 +8,9 @@
 
                 \tempo 4=90
                 %! scaling time signatures
-                \time 5/8
+                \time 6/8
                 \mark \markup \bold {  }
-                s1 * 5/8
+                s1 * 3/4
                 ^ \markup \raise #6 \with-dimensions-from \null {
                   \override #'(font-size . 5.5)
                   \concat {
@@ -23,101 +22,90 @@
                 % [Global Context measure 2]
 
                 %! scaling time signatures
-                \time 4/8
-                s1 * 1/2
+                \time 5/8
+                s1 * 5/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 3]
 
                 %! scaling time signatures
-                \time 3/8
-                s1 * 3/8
+                \time 4/8
+                s1 * 1/2
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 4]
 
-                \tempo 4=110
                 %! scaling time signatures
-                \time 9/8
-                s1 * 9/8
-                - \abjad-dashed-line-with-arrow
-                - \baca-metronome-mark-spanner-left-text 2 0 1 "90"
-                - \tweak padding #4
-                - \tweak staff-padding #2
-                - \tweak font-size #6
-                \bacaStartTextSpanMM
+                \time 7/8
+                s1 * 7/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 5]
 
                 %! scaling time signatures
-                \time 8/8
-                s1 * 1
+                \time 9/8
+                s1 * 9/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 6]
 
-                \tempo 4=130
                 %! scaling time signatures
                 \time 7/8
                 s1 * 7/8
-                \bacaStopTextSpanMM
-                - \abjad-invisible-line
-                - \baca-metronome-mark-spanner-left-text 2 0 1 "130"
-                - \tweak padding #4
-                - \tweak staff-padding #2
-                - \tweak font-size #6
-                \bacaStartTextSpanMM
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 7]
 
                 %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
-                \bacaStopTextSpanMM
+                \time 9/8
+                s1 * 9/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 8]
 
                 %! scaling time signatures
-                \time 8/8
-                s1 * 1
+                \time 7/8
+                s1 * 7/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 9]
 
                 %! scaling time signatures
-                \time 6/8
-                s1 * 3/4
+                \time 7/8
+                s1 * 7/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 10]
+
+                \once \override Score.TimeSignature.transparent = ##t
+                \once \override MultiMeasureRest.transparent = ##t
+                \time 1/4
+                s1 * 1/8
+
+                \once \override Rest.transparent = ##t
+                r1 * 1/8
+                ^ \markup \lower #9 \with-dimensions-from \null \musicglyph #"scripts.ulongfermata"
+                %! COMMENT_MEASURE_NUMBERS
+                %! evans.SegmentMaker.comment_measure_numbers()
+                % [Global Context measure 11]
 
                 %! scaling time signatures
                 \time 6/8
                 s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 11]
+                % [Global Context measure 12]
 
                 %! scaling time signatures
                 \time 5/8
                 s1 * 5/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 12]
-
-                %! scaling time signatures
-                \time 4/8
-                s1 * 1/2
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 13]
 
                 %! scaling time signatures
-                \time 3/8
-                s1 * 3/8
+                \time 5/8
+                s1 * 5/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 14]
@@ -129,17 +117,9 @@
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 15]
 
-                \tempo 4=40
                 %! scaling time signatures
-                \time 3/8
-                s1 * 3/8
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 5.5)
-                  \concat {
-                      \abjad-metronome-mark-markup #2 #0 #1 #"40"
-                  }
-                }
+                \time 4/8
+                s1 * 1/2
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 16]
@@ -147,27 +127,6 @@
                 %! scaling time signatures
                 \time 5/8
                 s1 * 5/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 17]
-
-                %! scaling time signatures
-                \time 8/8
-                s1 * 1
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 18]
-
-                %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 19]
-
-                %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
 
             }
 
@@ -177,1131 +136,1759 @@
                 \context StaffGroup = "Staff Group"
                 <<
 
-                    \tag #'group2
+                    \tag #'voice1
                     {
 
-                        \context PianoStaff = "sub group 1"
-                        <<
-
-                            \tag #'voice1
-                            {
-
-                                \context Staff = "violin 1 staff"
-                                {
-
-                                    \context Voice = "violin 1 voice"
-                                    {
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 1]
-
-                                        %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #12 "vn. I" }
-                                        %! applying staff names and clefs
-                                        \set Staff.instrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #14 "Violin I" }
-                                        r16
-
-                                        gqs'16
-                                        \mp
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \abjad-dashed-line-with-hook
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \baca-text-spanner-left-text "spazzolato + clt."
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak staff-padding 5
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \startTextSpanOne
-
-                                        r16
-
-                                        r16
-
-                                        \times 2/3
-                                        {
-
-                                            af'16
-
-                                            r4
-
-                                            r16
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            g'16
-
-                                            r8
-
-                                        }
-
-                                        \times 4/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 2]
-
-                                            r4
-
-                                            bqs'16
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(4)
-                                            %! SPANNER_STOP
-                                            \stopTextSpanOne
-
-                                        }
-
-                                        r4
-                                        \staff-line-count 4
-                                        \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 3]
-
-                                        \clef "percussion"
-                                        b4.
-                                        \ff
-                                        ^ \markup {behind bridge, on wrapping}
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 9/10
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 4]
-
-                                            r2
-
-                                            g4
-
-                                            r2
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 5]
-
-                                        r4
-
-                                        b4
-
-                                        r4
-
-                                        d'4
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 7/10
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 6]
-
-                                            r2
-
-                                            b4
-
-                                            r2
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 7]
-
-                                        b8
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_STOP
-                                        \ff
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \>
-
-                                        r8
-
-                                        r8
-
-                                        r8
-
-                                        r8
-
-                                        g8
-
-                                        r8
-
-                                        \times 8/9
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 8]
-
-                                            b8
-
-                                            r4
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'8
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            b8
-                                            ]
-
-                                            r2
-
-                                        }
-
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 9]
-
-                                            d'8
-
-                                            r8
-
-                                            f'8
-
-                                            r4
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            b8
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            g8
-                                            ]
-
-                                            r4
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 6/7
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 10]
-
-                                            r4
-
-                                            g8
-
-                                            r8
-
-                                            b8
-
-                                            r4
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 11]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        g8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        r8
-
-                                        r8
-
-                                        r8
-
-                                        \times 4/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 12]
-
-                                            r8
-
-                                            d'8
-
-                                            r8
-
-                                            b8
-
-                                            r8
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 13]
-
-                                        r8
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d'8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f'8
-                                        ]
-
-                                        \times 4/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 14]
-
-                                            r2
-
-                                            b8
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(3)
-                                            %! SPANNER_STOP
-                                            \p
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 15]
-
-                                        r4.
-                                        \staff-line-count 5
-                                        \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 16]
-
-                                        \clef "treble"
-                                        \pitchedTrill
-                                        fs''2
-                                        \mf
-                                        ~
-                                        \startTrillSpan g''
-
-                                        fs''8
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 17]
-
-                                        r1
-                                        \stopTrillSpan
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 18]
-
-                                        \pitchedTrill
-                                        d''2..
-                                        \startTrillSpan ef''
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 19]
-
-                                        r2..
-                                        \stopTrillSpan
-                                        \bar "||"
-
-                                    }
-
-                                }
-
-                            }
-
-                            \tag #'voice2
-                            {
-
-                                \context Staff = "violin 2 staff"
-                                {
-
-                                    \context Voice = "violin 2 voice"
-                                    {
-
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 1]
-
-                                            %! applying staff names and clefs
-                                            \set Staff.shortInstrumentName =
-                                            %! applying staff names and clefs
-                                            \markup { \hcenter-in #12 "vn. II" }
-                                            %! applying staff names and clefs
-                                            \set Staff.instrumentName =
-                                            %! applying staff names and clefs
-                                            \markup { \hcenter-in #14 "Violin II" }
-                                            r16
-
-                                            g'16
-                                            \mp
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_START
-                                            - \abjad-dashed-line-with-hook
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_START
-                                            - \baca-text-spanner-left-text "spazzolato + clt."
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_START
-                                            - \tweak staff-padding 5
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_START
-                                            \startTextSpanOne
-
-                                            r8
-
-                                            bqs'16
-
-                                            r16
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            r4
-
-                                            aqf'16
-
-                                        }
-
-                                        r8
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 2]
-
-                                        r16
-
-                                        r16
-
-                                        r16
-
-                                        cqs''16
-
-                                        \times 4/5
-                                        {
-
-                                            r4
-
-                                            eqs''16
-
-                                        }
-
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 3]
-
-                                            r8
-
-                                            bqf'16
-
-                                            r8.
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            r8
-
-                                            af'16
-                                            %! baca.text_spanner()
-                                            %! baca.PiecewiseCommand._call(4)
-                                            %! SPANNER_STOP
-                                            \stopTextSpanOne
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 9/8
-                                        {
-                                            \staff-line-count 4
-                                            \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 4]
-
-                                            \clef "percussion"
-                                            d'4
-                                            \ff
-                                            ^ \markup {behind bridge, on wrapping}
-
-                                            r2
-
-                                            f'4
-
-                                        }
-
-                                        \times 4/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 5]
-
-                                            r2.
-
-                                            b4
-
-                                            r4
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 7/6
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 6]
-
-                                            g4
-
-                                            r2
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 7/10
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 7]
-
-                                            g8
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_STOP
-                                            \ff
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(2)
-                                            %! SPANNER_START
-                                            \>
-
-                                            r2
-
-                                            g8
-
-                                            r8
-
-                                            b8
-
-                                            r4
-
-                                        }
-
-                                        \times 8/13
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 8]
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            g8
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            b8
-                                            ]
-
-                                            r2
-
-                                            d'8
-
-                                            r8
-
-                                            b8
-
-                                            r4
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'8
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f'8
-                                            ]
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 9]
-
-                                        r8
-
-                                        r8
-
-                                        r8
-
-                                        r8
-
-                                        b8
-
-                                        r8
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 10]
-
-                                        g8
-
-                                        r8
-
-                                        r8
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        g8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        r8
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 5/6
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 11]
-
-                                            r4.
-
-                                            g8
-
-                                            r8
-
-                                            b8
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 12]
-
-                                            r8
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'16
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            b16
-                                            ]
-
-                                            r8.
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 6/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 13]
-
-                                            r16
-
-                                            d'16
-
-                                            r16
-
-                                            f'16
-
-                                            r16
-
-                                        }
-
-                                        \times 4/5
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 14]
-
-                                            r8
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            b8
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            g8
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(3)
-                                            %! SPANNER_STOP
-                                            \p
-                                            ]
-
-                                            r4
-
-                                        }
-                                        \staff-line-count 5
-                                        \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 15]
-
-                                        \harmonicsOn
-                                        \clef "treble"
-                                        a''4
-                                        \mp
-                                        ^ \markup (III)
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        d'''8
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 16]
-
-                                        d'''8
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        fs'''2
-                                        %! abjad.glissando(7)
-                                        \glissando
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 17]
-
-                                        a'''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        bqs'''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        d''''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        e''''4
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 18]
-
-                                        e''''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        d''''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        bqs'''4
-                                        %! abjad.glissando(7)
-                                        \glissando
-
-                                        a'''8
-                                        \harmonicsOff
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 19]
-
-                                        r2..
-                                        \bar "||"
-
-                                    }
-
-                                }
-
-                            }
-
-                        >>
-
-                    }
-
-                    \tag #'voice3
-                    {
-
-                        \context Staff = "viola staff"
+                        \context Staff = "percussion 1 staff"
                         {
 
-                            \context Voice = "viola voice"
+                            \context Voice = "percussion 1 voice"
                             {
+                                \staff-line-count 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 1]
 
-                                \times 4/5
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 1]
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 1" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 1" }
+                                \clef "percussion"
+                                c'2.
+                                :32
+                                \p
+                                \<
+                                ~
+                                \boxed-markup "bass drum" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 2]
 
-                                    %! applying staff names and clefs
-                                    \set Staff.shortInstrumentName =
-                                    %! applying staff names and clefs
-                                    \markup { \hcenter-in #12 "va." }
-                                    %! applying staff names and clefs
-                                    \set Staff.instrumentName =
-                                    %! applying staff names and clefs
-                                    \markup { \hcenter-in #14 "Viola" }
-                                    r16
+                                c'2
+                                :32
+                                ~
 
-                                    aqf'16
-                                    \mp
-                                    %! baca.text_spanner()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_START
-                                    - \abjad-dashed-line-with-hook
-                                    %! baca.text_spanner()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_START
-                                    - \baca-text-spanner-left-text "spazzolato + clt."
-                                    %! baca.text_spanner()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_START
-                                    - \tweak staff-padding 5
-                                    %! baca.text_spanner()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_START
-                                    \startTextSpanOne
+                                c'8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 3]
 
-                                    r8
+                                c'2
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 4]
 
-                                    cqs''16
+                                c'2..
+                                :32
+                                \f
+                                \>
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 5]
 
-                                }
+                                c'1
+                                :32
+                                ~
 
-                                r4
+                                c'8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 6]
 
-                                eqs''16
+                                c'2..
+                                :32
+                                \p
+                                \staff-line-count 6
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 7]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                c'16
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(2)
+                                %! SPANNER_STOP
+                                \pp
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(2)
+                                %! SPANNER_START
+                                \<
+                                [
+                                \boxed-markup "drums" 1
 
                                 r16
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 2]
 
-                                r4
+                                e'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b'16
+                                ]
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'16
+                                    [
+
+                                    r16
+
+                                    d16
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
 
                                 \times 2/3
                                 {
 
-                                    r16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
 
-                                    bqf'16
+                                    c'16
 
-                                    r8
+                                    f16
 
-                                    af'16
+                                    d16
 
-                                    r16
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
 
                                 }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r32
+                                    [
+
+                                    a32
+
+                                    c'32
+
+                                    a32
+
+                                    f32
+
+                                    r32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                e'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                b'16
+                                ]
 
                                 \times 4/5
                                 {
                                     %! COMMENT_MEASURE_NUMBERS
                                     %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 3]
+                                    % [percussion 1 voice measure 8]
 
-                                    r16
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'16
+                                    [
 
-                                    gqs'16
-
-                                    r8.
-
-                                }
-
-                                \times 2/3
-                                {
+                                    d16
 
                                     r8
 
-                                    af'16
-                                    %! baca.text_spanner()
-                                    %! baca.PiecewiseCommand._call(4)
-                                    %! SPANNER_STOP
-                                    \stopTextSpanOne
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
 
                                 }
-                                \staff-line-count 4
-                                \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 4]
 
-                                \clef "percussion"
-                                g8.
-                                \ff
-                                ^ \markup {behind bridge, on wrapping}
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r16
+                                [
 
-                                r8.
+                                \revert Staff.Stem.stemlet-length
+                                a16
+                                ]
 
-                                r8.
+                                \override Staff.Stem.stemlet-length = 0.75
+                                c'16
+                                [
 
-                                b8.
+                                \revert Staff.Stem.stemlet-length
+                                f16
+                                ]
 
-                                r8.
+                                \times 4/5
+                                {
 
-                                r8.
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    d16
+
+                                    r16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                a16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                c'16
+                                ]
 
                                 \tweak text #tuplet-number::calc-fraction-text
                                 \times 8/7
                                 {
                                     %! COMMENT_MEASURE_NUMBERS
                                     %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 5]
-
-                                    r8
-
-                                    g8
-
-                                    r8
-
-                                    b8
-
-                                    r4
-
-                                    d'8
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 6]
-
-                                r2..
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 7/9
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 7]
-
-                                    g8
-                                    %! baca.hairpin()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_STOP
-                                    \ff
-                                    %! baca.hairpin()
-                                    %! baca.PiecewiseCommand._call(2)
-                                    %! SPANNER_START
-                                    \>
-
-                                    r2
-
-                                    b8
-
-                                    r8
-
-                                    g8
-
-                                    r8
-
-                                }
-
-                                \times 8/11
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 8]
-
-                                    r8
+                                    % [percussion 1 voice measure 9]
 
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    b8
+                                    a32
                                     [
 
-                                    \revert Staff.Stem.stemlet-length
-                                    d'8
-                                    ]
+                                    f32
 
-                                    r2
+                                    c'32
 
-                                    b8
+                                    r32
 
-                                    r8
+                                    e'32
 
-                                    d'8
-
-                                    r8
-
-                                }
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 12/11
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 9]
-
-                                    r16
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    f'16
-                                    [
+                                    b'32
 
                                     \revert Staff.Stem.stemlet-length
-                                    b16
+                                    g'32
                                     ]
 
-                                    r4
-
-                                    g16
-
-                                    r16
-
-                                    g16
-
-                                    r16
-
                                 }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 10]
-
-                                r8
 
                                 \override Staff.Stem.stemlet-length = 0.75
-                                b8
+                                d16
                                 [
 
                                 \revert Staff.Stem.stemlet-length
-                                g8
+                                r16
                                 ]
 
-                                r8
+                                \override Staff.Stem.stemlet-length = 0.75
+                                e'16
+                                [
 
-                                r8
-
-                                r8
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 11]
-
-                                r8
-
-                                b8
-
-                                r8
-
-                                d'8
-
-                                r8
+                                \revert Staff.Stem.stemlet-length
+                                a16
+                                ]
 
                                 \times 4/5
                                 {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 12]
-
-                                    r8
 
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    b8
+                                    c'16
                                     [
 
+                                    f16
+
+                                    d16
+
                                     \revert Staff.Stem.stemlet-length
-                                    d'8
+                                    r8
                                     ]
 
-                                    r4
-
                                 }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                a16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(3)
+                                %! SPANNER_STOP
+                                \ff
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 13]
+                                % [percussion 1 voice measure 10]
 
-                                r8
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 11]
 
-                                r8
+                                b2.
+                                :32
+                                \p
+                                \f
+                                \<
+                                ~
+                                \boxed-markup "tom toms" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 12]
 
-                                f'8
+                                b2
+                                :32
+                                \f
+                                \>
+                                ~
 
-                                \times 4/5
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 14]
+                                b8
+                                :32
+                                \p
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 13]
 
-                                    r8
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                \f
+                                [
+                                \boxed-markup "congas" 1
 
-                                    b8
+                                b16
+                                - \accent
 
-                                    r4
+                                b16
 
-                                    g8
-                                    %! baca.hairpin()
-                                    %! baca.PiecewiseCommand._call(3)
-                                    %! SPANNER_STOP
-                                    \p
+                                b16
 
-                                }
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 14]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+
+                                b16
+
+                                b16
+
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 15]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                b16
+
+                                b16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 16]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
+                                \bar "||"
+
+                            }
+
+                        }
+
+                    }
+
+                    \tag #'voice2
+                    {
+
+                        \context Staff = "percussion 2 staff"
+                        {
+
+                            \context Voice = "percussion 2 voice"
+                            {
                                 \staff-line-count 1
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 15]
+                                % [percussion 2 voice measure 1]
 
-                                c'4
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 2" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 2" }
+                                \clef "percussion"
+                                c'2.
+                                :32
                                 \p
-                                ^ \markup {on bridge}
+                                \f
+                                \<
+                                ~
+                                \boxed-markup "bass drum" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 2]
+
+                                c'2
+                                :32
+                                \f
+                                \>
+                                ~
 
                                 c'8
+                                :32
+                                \p
+                                \staff-line-count 6
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 3]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                c'16
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(2)
+                                %! SPANNER_STOP
+                                \pp
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(2)
+                                %! SPANNER_START
+                                \<
+                                [
+                                \boxed-markup "drums" 1
+
+                                r16
+
+                                e'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b'16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'8
+                                    [
+
+                                    r8
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d8
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 4]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    e'16
+
+                                    a16
+
+                                    c'16
+
+                                    f16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d16
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a32
+                                    [
+
+                                    c'32
+
+                                    r32
+
+                                    a32
+
+                                    c'32
+
+                                    a32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f32
+                                    ]
+
+                                }
+
+                                c'8
+
+                                r8
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    b'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    g'16
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 5]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r8
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                d8
+                                ]
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    e'16
+
+                                    a16
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    a16
+
+                                    c'16
+
+                                    r16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a8
+                                    [
+
+                                    f8
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                e'16
+                                ]
+
+                                \times 2/3
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 6]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b'8
+                                    [
+
+                                    g'8
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r8
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                e'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                a16
+                                ]
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+
+                                    f16
+
+                                    d16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                r8
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 7]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a32
+                                    [
+
+                                    c'32
+
+                                    a32
+
+                                    f32
+
+                                    c'32
+
+                                    r32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'32
+                                    ]
+
+                                }
+
+                                b'8
+
+                                g'8
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    d16
+
+                                    r16
+
+                                    e'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    a16
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                c'16
+                                [
+
+                                f16
+
+                                d16
+
+                                a16
+
+                                \revert Staff.Stem.stemlet-length
+                                c'8
+                                ]
+
+                                \times 2/3
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 8]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    a16
+
+                                    c'16
+
+                                    a16
+
+                                    f16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r8
+                                    [
+
+                                    e'8
+
+                                    \revert Staff.Stem.stemlet-length
+                                    b'8
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                g'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 9]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f8
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                d8
+                                ]
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    c'16
+
+                                    r16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                a8
+
+                                f8
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    %! baca.hairpin()
+                                    %! baca.PiecewiseCommand._call(3)
+                                    %! SPANNER_STOP
+                                    \ff
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 10]
+
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 11]
+
+                                d'2.
+                                :32
+                                \p
+                                \f
+                                \<
+                                ~
+                                \boxed-markup "tom toms" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 12]
+
+                                d'2
+                                :32
+                                \f
+                                \>
+                                ~
+
+                                d'8
+                                :32
+                                \p
+                                \<
                                 ~
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 16]
+                                % [percussion 2 voice measure 13]
 
-                                c'4
-
-                                c'4
-
-                                c'8
+                                d'2
+                                :32
+                                \f
+                                \>
                                 ~
+
+                                d'8
+                                :32
+                                \p
+                                \staff-line-count 2
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 17]
+                                % [percussion 2 voice measure 14]
 
-                                c'4
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                \f
+                                [
+                                \boxed-markup "tom toms" 1
 
-                                c'4
+                                b16
+                                - \accent
 
-                                c'4.
+                                b16
 
-                                c'8
-                                ~
+                                b16
+                                - \accent
+
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 18]
+                                % [percussion 2 voice measure 15]
 
-                                c'8
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
 
-                                c'4.
+                                b16
+                                - \accent
 
-                                c'4
+                                b16
 
-                                c'8
-                                ~
+                                b16
+                                - \accent
+
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 19]
+                                % [percussion 2 voice measure 16]
 
-                                c'4
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
 
-                                c'4
+                                b16
+                                - \accent
 
-                                c'4.
+                                b16
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                b16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                - \accent
+                                ]
                                 \bar "||"
+
+                            }
+
+                        }
+
+                    }
+
+                    \tag #'voice3
+                    {
+
+                        \context Staff = "percussion 3 staff"
+                        {
+
+                            \context Voice = "percussion 3 voice"
+                            {
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 1]
+
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 3" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 3" }
+                                \clef "percussion"
+                                b2.
+                                :32
+                                \p
+                                \f
+                                \<
+                                ~
+                                \boxed-markup "congas" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 2]
+
+                                b2
+                                :32
+                                ~
+
+                                b8
+                                :32
+                                \f
+                                \>
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 3]
+
+                                b2
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 4]
+
+                                b2..
+                                :32
+                                \p
+
+                                \times 2/3
+                                {
+                                    \staff-line-count 6
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 5]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    %! baca.hairpin()
+                                    %! baca.PiecewiseCommand._call(2)
+                                    %! SPANNER_STOP
+                                    \pp
+                                    %! baca.hairpin()
+                                    %! baca.PiecewiseCommand._call(2)
+                                    %! SPANNER_START
+                                    \<
+                                    [
+                                    \boxed-markup "drums" 1
+
+                                    r16
+
+                                    e'16
+
+                                    b'16
+
+                                    g'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    r16
+
+                                    e'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    f16
+
+                                    d16
+
+                                    a16
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    a16
+
+                                    c'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f16
+                                    [
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 6]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    b'16
+
+                                    r16
+
+                                    g'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    r16
+
+                                    a16
+
+                                    c'16
+
+                                    f16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    r16
+
+                                    a16
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    a16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    a16
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 7]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f16
+                                [
+
+                                r16
+
+                                c'16
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    b'16
+
+                                    g'16
+
+                                    r16
+
+                                    d16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    r16
+
+                                    c'16
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    a16
+
+                                    r16
+
+                                    c'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 8]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f32
+                                    [
+
+                                    c'32
+
+                                    e'32
+
+                                    r32
+
+                                    b'32
+
+                                    g'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d32
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    e'16
+
+                                    r16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f16
+                                    [
+
+                                    r16
+
+                                    d16
+
+                                    a16
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 9]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a32
+                                    [
+
+                                    f32
+
+                                    r32
+
+                                    c'32
+
+                                    e'32
+
+                                    b'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r32
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                g'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                e'16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    r16
+
+                                    c'16
+
+                                    f16
+
+                                    d16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    %! baca.hairpin()
+                                    %! baca.PiecewiseCommand._call(3)
+                                    %! SPANNER_STOP
+                                    \ff
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 10]
+
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 11]
+
+                                b2.
+                                :32
+                                \p
+                                \f
+                                \<
+                                ~
+                                \boxed-markup "bongos" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 12]
+
+                                b2
+                                :32
+                                ~
+
+                                b8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 13]
+
+                                b2
+                                :32
+                                \f
+                                \>
+                                ~
+
+                                b8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 14]
+
+                                b2
+                                :32
+                                \p
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    \staff-line-count 1
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 15]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'32
+                                    \p
+                                    \<
+                                    [
+                                    \boxed-markup "bass drum" 1
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'32
+                                    [
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 3 voice measure 16]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'32
+                                    [
+
+                                    c'32
+                                    \f
+                                    \>
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'32
+                                    [
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    c'32
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'32
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    \p
+                                    ]
+                                    \bar "||"
+
+                                }
 
                             }
 
@@ -1312,320 +1899,432 @@
                     \tag #'voice4
                     {
 
-                        \context Staff = "cello staff"
+                        \context Staff = "percussion 4 staff"
                         {
 
-                            \context Voice = "cello voice"
+                            \context Voice = "percussion 4 voice"
                             {
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 5/4
-                                {
-                                    \staff-line-count 4
-                                    \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 1]
-
-                                    %! applying staff names and clefs
-                                    \set Staff.shortInstrumentName =
-                                    %! applying staff names and clefs
-                                    \markup { \hcenter-in #12 "vc." }
-                                    %! applying staff names and clefs
-                                    \set Staff.instrumentName =
-                                    %! applying staff names and clefs
-                                    \markup { \hcenter-in #14 "Violoncello" }
-                                    \clef "percussion"
-                                    b4
-                                    \ff
-                                    ^ \markup {behind bridge, on wrapping}
-
-                                    r4
-
-                                }
-
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 2]
-
-                                    r4
-
-                                    d'4
-
-                                    r4
-
-                                }
+                                \staff-line-count 2
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 3]
+                                % [percussion 4 voice measure 1]
 
-                                r4.
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 "pc. 4" }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Percussion 4" }
+                                \clef "percussion"
+                                d'2.
+                                :32
+                                \p
+                                \mf
+                                \<
+                                ~
+                                \boxed-markup "congas" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 2]
 
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 9/14
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 4]
+                                d'2
+                                :32
+                                ~
 
-                                    r4
+                                d'8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 3]
 
-                                    f'4
+                                d'2
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 4]
 
-                                    r4
+                                d'2..
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 5]
 
-                                    b4
+                                d'1
+                                :32
+                                \f
+                                \>
+                                ~
 
-                                    r2
+                                d'8
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 6]
 
-                                    g4
+                                d'2..
+                                :32
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 7]
 
-                                }
+                                d'1
+                                :32
+                                ~
+
+                                d'8
+                                :32
+                                \p
 
                                 \times 2/3
                                 {
+                                    \staff-line-count 6
                                     %! COMMENT_MEASURE_NUMBERS
                                     %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 5]
+                                    % [percussion 4 voice measure 8]
 
-                                    r2.
-
-                                    g4
-
-                                    r4
-
-                                    b4
-
-                                }
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 7/10
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 6]
-
-                                    r2
-
-                                    g4
-
-                                    r2
-
-                                }
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 7/12
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 7]
-
-                                    g8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'8
                                     %! baca.hairpin()
                                     %! baca.PiecewiseCommand._call(2)
                                     %! SPANNER_STOP
-                                    \ff
+                                    \pp
                                     %! baca.hairpin()
                                     %! baca.PiecewiseCommand._call(2)
                                     %! SPANNER_START
-                                    \>
-
-                                    r2
-
-                                    b8
+                                    \<
+                                    [
+                                    \boxed-markup "drums" 1
 
                                     r8
 
-                                    g8
-
-                                    r4
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b8
-                                    [
-
                                     \revert Staff.Stem.stemlet-length
-                                    d'8
+                                    e'8
                                     ]
 
                                 }
 
-                                \times 8/9
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 8]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b'16
+                                [
 
-                                    r2
+                                \revert Staff.Stem.stemlet-length
+                                g'16
+                                ]
 
-                                    b8
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r16
+                                [
 
-                                    r8
-
-                                    d'8
-
-                                    r4
-
-                                }
+                                \revert Staff.Stem.stemlet-length
+                                d16
+                                ]
 
                                 \times 2/3
                                 {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 9]
 
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    f'8
+                                    r8
                                     [
 
+                                    e'8
+
                                     \revert Staff.Stem.stemlet-length
-                                    b8
+                                    a8
                                     ]
-
-                                    r2
-
-                                    g8
-
-                                    r8
-
-                                    g8
 
                                 }
 
+                                \override Staff.Stem.stemlet-length = 0.75
+                                c'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                f16
+                                ]
+
                                 \tweak text #tuplet-number::calc-fraction-text
-                                \times 12/11
+                                \times 8/7
                                 {
                                     %! COMMENT_MEASURE_NUMBERS
                                     %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 10]
-
-                                    r8
+                                    % [percussion 4 voice measure 9]
 
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    b16
+                                    d32
                                     [
 
+                                    a32
+
+                                    c'32
+
+                                    r32
+
+                                    a32
+
+                                    c'32
+
                                     \revert Staff.Stem.stemlet-length
-                                    g16
+                                    a32
                                     ]
 
-                                    r4
+                                }
 
-                                    b16
+                                f8
 
+                                r8
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'32
+                                    [
+
+                                    e'32
+
+                                    b'32
+
+                                    g'32
+
+                                    d32
+
+                                    \revert Staff.Stem.stemlet-length
                                     r16
-
-                                    d'16
+                                    ]
 
                                 }
 
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 5/8
+                                \override Staff.Stem.stemlet-length = 0.75
+                                e'16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                %! baca.hairpin()
+                                %! baca.PiecewiseCommand._call(3)
+                                %! SPANNER_STOP
+                                \ff
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 10]
+
+                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                \once \override MultiMeasureRest.transparent = ##t
+                                R1 * 1/4
+                                \stopStaff \startStaff
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 11]
+
+                                d'2.
+                                :32
+                                \p
+                                \mf
+                                \<
+                                ~
+                                \boxed-markup "bongos" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 12]
+
+                                d'2
+                                :32
+                                \f
+                                \>
+                                ~
+
+                                d'8
+                                :32
+                                \p
+
+                                \times 4/5
                                 {
+                                    \staff-line-count 1
                                     %! COMMENT_MEASURE_NUMBERS
                                     %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 11]
-
-                                    r4
+                                    % [percussion 4 voice measure 13]
 
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    b8
+                                    c'16
+                                    \p
+                                    \<
                                     [
+                                    \boxed-markup "bass drum" 1
+
+                                    c'16
+
+                                    c'16
+
+                                    c'16
 
                                     \revert Staff.Stem.stemlet-length
-                                    d'8
+                                    c'16
                                     ]
-
-                                    r2
 
                                 }
 
                                 \times 4/5
                                 {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 12]
 
-                                    f'8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
 
-                                    r8
+                                    c'16
+                                    \f
+                                    \>
 
-                                    b8
+                                    c'16
 
-                                    r4
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
 
                                 }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    \p
+                                    ]
+
+                                }
+                                \staff-line-count 2
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 13]
+                                % [percussion 4 voice measure 14]
 
                                 \override Staff.Stem.stemlet-length = 0.75
-                                g8
+                                d'16
+                                \mf
+                                - \accent
                                 [
+                                \boxed-markup "bongos" 1
+
+                                d'16
+
+                                d'16
+
+                                d'16
+
+                                d'16
+
+                                d'16
+
+                                d'16
 
                                 \revert Staff.Stem.stemlet-length
-                                g8
+                                d'16
+                                - \accent
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 4 voice measure 15]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                d'16
+
+                                d'16
+
+                                d'16
+
+                                d'16
+
+                                d'16
+                                - \accent
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
                                 ]
 
-                                r8
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 14]
+                                \times 4/5
+                                {
+                                    \staff-line-count 1
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 4 voice measure 16]
 
-                                r8
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    \p
+                                    \<
+                                    [
+                                    \boxed-markup "bass drum" 1
 
-                                r8
+                                    c'16
 
-                                r8
+                                    c'16
 
-                                b8
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(3)
-                                %! SPANNER_STOP
-                                \p
-                                \staff-line-count 5
-                                \once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 15]
+                                    c'16
 
-                                \clef "bass"
-                                c,4.
-                                \mp
-                                ~
-                                - \abjad-dashed-line-with-hook
-                                - \tweak bound-details.left.text \markup \concat { IV \hspace #0.5 }
-                                - \tweak staff-padding 4
-                                \startTextSpan
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 16]
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
 
-                                c,2
-                                ~
+                                }
 
-                                c,8
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 17]
+                                \times 4/5
+                                {
 
-                                c,1
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 18]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
 
-                                c,2..
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 19]
+                                    c'16
+                                    \f
+                                    \>
 
-                                r2..
-                                \stopTextSpan
-                                \bar "||"
+                                    c'16
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+
+                                    c'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    \p
+                                    ]
+                                    \bar "||"
+
+                                }
 
                             }
 

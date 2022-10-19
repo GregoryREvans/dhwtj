@@ -1,6 +1,5 @@
         \context Score = "Score"
         <<
-
             \context TimeSignatureContext = "Global Context"
             {
                 %! COMMENT_MEASURE_NUMBERS
@@ -23,8 +22,8 @@
                 % [Global Context measure 2]
 
                 %! scaling time signatures
-                \time 8/8
-                s1 * 1
+                \time 7/8
+                s1 * 7/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 3]
@@ -36,137 +35,37 @@
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 4]
 
-                \tempo 4=108
                 %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
-                ^ \markup {
-                  \raise #6 \with-dimensions-from \null
-                  \override #'(font-size . 5.5)
-                  \concat {
-                      \abjad-metronome-mark-markup #2 #0 #1 #"108"
-                  }
-                }
+                \time 6/8
+                s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 5]
 
                 %! scaling time signatures
-                \time 8/8
-                s1 * 1
+                \time 6/8
+                s1 * 3/4
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 6]
 
-                \once \override Score.TimeSignature.transparent = ##t
-                \once \override MultiMeasureRest.transparent = ##t
-                \time 1/4
-                s1 * 1/8
-
-                \once \override Rest.transparent = ##t
-                r1 * 1/8
-                ^ \markup \lower #9 \with-dimensions-from \null \musicglyph #"scripts.ufermata"
+                %! scaling time signatures
+                \time 5/8
+                s1 * 5/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 7]
 
                 %! scaling time signatures
-                \time 6/8
-                s1 * 3/4
+                \time 5/8
+                s1 * 5/8
                 %! COMMENT_MEASURE_NUMBERS
                 %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 8]
 
                 %! scaling time signatures
-                \time 5/8
-                s1 * 5/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 9]
-
-                %! scaling time signatures
                 \time 4/8
                 s1 * 1/2
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 10]
-
-                \once \override Score.TimeSignature.transparent = ##t
-                \once \override MultiMeasureRest.transparent = ##t
-                \time 1/4
-                s1 * 1/8
-
-                \once \override Rest.transparent = ##t
-                r1 * 1/8
-                ^ \markup \lower #9 \with-dimensions-from \null \musicglyph #"scripts.ufermata"
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 11]
-
-                %! scaling time signatures
-                \time 4/8
-                s1 * 1/2
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 12]
-
-                %! scaling time signatures
-                \time 3/8
-                s1 * 3/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 13]
-
-                %! scaling time signatures
-                \time 5/8
-                s1 * 5/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 14]
-
-                %! scaling time signatures
-                \time 8/8
-                s1 * 1
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 15]
-
-                %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 16]
-
-                %! scaling time signatures
-                \time 7/8
-                s1 * 7/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 17]
-
-                %! scaling time signatures
-                \time 9/8
-                s1 * 9/8
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 18]
-
-                %! scaling time signatures
-                \time 6/8
-                s1 * 3/4
-                %! COMMENT_MEASURE_NUMBERS
-                %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 19]
-
-                \once \override Score.TimeSignature.transparent = ##t
-                \once \override MultiMeasureRest.transparent = ##t
-                \time 1/4
-                s1 * 1/8
-
-                \once \override Rest.transparent = ##t
-                r1 * 1/8
-                ^ \markup \lower #9 \with-dimensions-from \null \musicglyph #"scripts.ufermata"
 
             }
 
@@ -176,2037 +75,884 @@
                 \context StaffGroup = "Staff Group"
                 <<
 
-                    \tag #'group2
+                    \tag #'voice1
                     {
 
-                        \context PianoStaff = "sub group 1"
-                        <<
+                        \context Staff = "percussion 1 staff"
+                        {
 
-                            \tag #'voice1
+                            \context Voice = "percussion 1 voice"
                             {
 
-                                \context Staff = "violin 1 staff"
+                                \times 2/3
+                                {
+                                    \staff-line-count 6
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 1 voice measure 1]
+
+                                    %! applying staff names and clefs
+                                    \set Staff.shortInstrumentName =
+                                    %! applying staff names and clefs
+                                    \markup { \hcenter-in #12 "pc. 1" }
+                                    %! applying staff names and clefs
+                                    \set Staff.instrumentName =
+                                    %! applying staff names and clefs
+                                    \markup { \hcenter-in #14 "Percussion 1" }
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d8
+                                    \f
+                                    [
+                                    \boxed-markup "drums" 1
+
+                                    r8
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d8
+                                    ]
+
+                                }
+
+                                f8
+
+                                d8
+
+                                \times 2/3
                                 {
 
-                                    \context Voice = "violin 1 voice"
-                                    {
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 1]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r8
+                                    [
 
-                                        %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #12 "vn. I" }
-                                        %! applying staff names and clefs
-                                        \set Staff.instrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #14 "Violin I" }
-                                        \pitchedTrill
-                                        cs''2.
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_STOP
-                                        \f
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \>
-                                        ~
-                                        \startTrillSpan d''
+                                    f8
 
-                                        cs''4.
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 2]
+                                    \revert Staff.Stem.stemlet-length
+                                    r8
+                                    ]
 
-                                        \pitchedTrill
-                                        b'1
-                                        \stopTrillSpan
-                                        \startTrillSpan cs''
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 3]
+                                }
 
-                                        \pitchedTrill
-                                        c''2..
-                                        \stopTrillSpan
-                                        \startTrillSpan d''
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 4]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                a8
+                                [
 
-                                        c'4
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \downbow
-                                        \stopTrillSpan
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #1 #7
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
+                                d8
 
-                                        \times 2/3
-                                        {
+                                \revert Staff.Stem.stemlet-length
+                                a8
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 2]
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'8
-                                            [
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f8
+                                [
 
-                                            cs'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #4 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                \revert Staff.Stem.stemlet-length
+                                a8
+                                ]
 
-                                            \revert Staff.Stem.stemlet-length
-                                            d'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #6 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
+                                \times 2/3
+                                {
 
-                                        }
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d8
+                                    [
 
-                                        d'8
-                                        ~
+                                    d8
 
-                                        d'4
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 5]
+                                    \revert Staff.Stem.stemlet-length
+                                    r8
+                                    ]
 
-                                        d'2.
-                                        ~
+                                }
 
-                                        \times 2/3
-                                        {
+                                f8
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'8
-                                            [
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d8
+                                [
 
-                                            b8.
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #5 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #7 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                \revert Staff.Stem.stemlet-length
+                                f8
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 3]
 
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'16
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(3)
-                                            %! SPANNER_STOP
-                                            \p
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(1)
-                                            \bacaStopTextSpanBCP
-                                            ]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                a8
+                                [
 
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 6]
+                                \revert Staff.Stem.stemlet-length
+                                r8
+                                ]
 
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \stopStaff \startStaff
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 7]
+                                \times 2/3
+                                {
 
-                                        d'4.
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_STOP
-                                        \f
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \upbow
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak stencil #constante-hairpin
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \<
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #5 #7
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d8
+                                    [
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 3/4
-                                        {
+                                    a8
 
-                                            e'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #3 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                    \revert Staff.Stem.stemlet-length
+                                    f8
+                                    ]
 
-                                            f'4.
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #2 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #1 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                }
 
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 8]
+                                a8
 
-                                        f'4.
-                                        ~
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d8
+                                [
 
-                                        f'4
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 9]
+                                \revert Staff.Stem.stemlet-length
+                                r8
+                                ]
+                                \staff-line-count 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 4]
 
-                                        f'4..
+                                c'2.
+                                \f
+                                ^ \music-stand-markup-two
+                                ~
+                                \boxed-markup "bowed music stand" 1
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 5]
 
-                                        eqs'16
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(3)
-                                        %! SPANNER_STOP
-                                        \!
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(1)
-                                        \bacaStopTextSpanBCP
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 10]
+                                c'2.
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 6]
 
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \stopStaff \startStaff
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 11]
+                                c'4.
+                                ~
 
-                                        e'4
-                                        \f
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \upbow
-                                        \>
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #5 #5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
+                                c'4
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 7]
 
-                                        \times 2/3
-                                        {
+                                c'4.
+                                ~
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            [
+                                c'4
+                                ~
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 1 voice measure 8]
 
-                                            fs'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #1 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                c'2
+                                \bar "||"
 
-                                            \revert Staff.Stem.stemlet-length
-                                            gqf'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #4 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #3 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
+                            }
 
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 12]
+                        }
 
-                                        gqf'4.
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 13]
+                    }
 
-                                        gqf'4.
-                                        ~
+                    \tag #'voice2
+                    {
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        gqf'8.
-                                        [
+                        \context Staff = "percussion 2 staff"
+                        {
 
-                                        \revert Staff.Stem.stemlet-length
-                                        g'16
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(1)
-                                        \bacaStopTextSpanBCP
-                                        ]
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 14]
+                            \context Voice = "percussion 2 voice"
+                            {
 
-                                        eqs''1
-                                        :32
-                                        \p
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \abjad-dashed-line-with-hook
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \baca-text-spanner-left-text "XFB."
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak staff-padding 5
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \startTextSpanOne
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 15]
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 8/7
+                                {
+                                    \staff-line-count 6
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 1]
 
-                                        d'4
-                                        \mf
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \downbow
-                                        \>
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(4)
-                                        %! SPANNER_STOP
-                                        \stopTextSpanOne
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #2 #5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
+                                    %! applying staff names and clefs
+                                    \set Staff.shortInstrumentName =
+                                    %! applying staff names and clefs
+                                    \markup { \hcenter-in #12 "pc. 2" }
+                                    %! applying staff names and clefs
+                                    \set Staff.instrumentName =
+                                    %! applying staff names and clefs
+                                    \markup { \hcenter-in #14 "Percussion 2" }
+                                    \clef "percussion"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f32
+                                    \f
+                                    [
+                                    \boxed-markup "drums" 1
 
-                                        \times 2/3
-                                        {
+                                    r32
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'8
-                                            [
+                                    d32
 
-                                            b8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #3 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
+                                    g'32
 
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #1 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #5 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
+                                    e'32
 
-                                        }
+                                    r32
 
-                                        ef'8
-                                        ~
+                                    \revert Staff.Stem.stemlet-length
+                                    a32
+                                    ]
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        ef'8.
-                                        [
+                                }
 
-                                        \revert Staff.Stem.stemlet-length
-                                        d'16
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(1)
-                                        \bacaStopTextSpanBCP
-                                        ]
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 16]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r16
+                                [
 
-                                        dqf''2..
-                                        :32
-                                        \p
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \abjad-dashed-line-with-hook
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \baca-text-spanner-left-text "XFB."
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak staff-padding 5
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \startTextSpanOne
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 17]
+                                \revert Staff.Stem.stemlet-length
+                                e'16
+                                ]
 
-                                        d''2.
-                                        :32
-                                        ~
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
 
-                                        d''4.
-                                        :32
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 18]
+                                \revert Staff.Stem.stemlet-length
+                                f16
+                                ]
 
-                                        cs''2.
-                                        :32
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(4)
-                                        %! SPANNER_STOP
-                                        \stopTextSpanOne
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 19]
+                                \times 4/5
+                                {
 
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \bar "||"
-                                        \stopStaff \startStaff
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
 
-                                    }
+                                    g'16
+
+                                    e'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                e'16
+                                [
+
+                                d16
+
+                                f16
+
+                                \revert Staff.Stem.stemlet-length
+                                d16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    g'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 2]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    e'16
+
+                                    d16
+
+                                    f16
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    d16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    r16
+                                    [
+
+                                    g'16
+
+                                    e'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    r16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    r16
+
+                                    d16
+
+                                    f16
+
+                                    d16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    g'16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'16
+                                    [
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 3]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r16
+                                [
+
+                                d16
+
+                                f16
+
+                                \revert Staff.Stem.stemlet-length
+                                d16
+                                ]
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'16
+                                    [
+
+                                    r16
+
+                                    e'16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                f16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d16
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                r16
+                                ]
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    g'16
+                                    [
+
+                                    r16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 4]
+
+                                %! applying invisibility
+                                \once \override Rest.transparent = ##t
+                                r1 * 3/8
+
+                                R1 * 3/8
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 6/7
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 5]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    \p
+                                    \<
+                                    [
+
+                                    f16
+
+                                    a16
+
+                                    f16
+
+                                    e'16
+
+                                    f16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \times 6/7
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    f16
+                                    \f
+                                    \>
+                                    [
+
+                                    a16
+
+                                    f16
+
+                                    a16
+
+                                    f16
+
+                                    e'16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f16
+                                    \p
+                                    ]
+
+                                }
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 2 voice measure 6]
+
+                                %! applying invisibility
+                                \once \override Rest.transparent = ##t
+                                r1 * 5/16
+
+                                R1 * 5/16
+
+                                \times 4/5
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 7]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    \p
+                                    \<
+                                    [
+
+                                    f16
+
+                                    a16
+
+                                    f16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    e'16
+
+                                    f16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f16
+                                    ]
+
+                                }
+
+                                \times 2/3
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    f16
+                                    \f
+                                    \>
+
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+                                    %! COMMENT_MEASURE_NUMBERS
+                                    %! evans.SegmentMaker.comment_measure_numbers()
+                                    % [percussion 2 voice measure 8]
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    d16
+                                    [
+
+                                    e'16
+
+                                    f16
+
+                                    a16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    f16
+                                    ]
+
+                                }
+
+                                \times 4/5
+                                {
+
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a16
+                                    [
+
+                                    f16
+
+                                    c'16
+
+                                    d16
+
+                                    \revert Staff.Stem.stemlet-length
+                                    e'16
+                                    \p
+                                    ]
+                                    \bar "||"
 
                                 }
 
                             }
 
-                            \tag #'voice2
-                            {
-
-                                \context Staff = "violin 2 staff"
-                                {
-
-                                    \context Voice = "violin 2 voice"
-                                    {
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 1]
-
-                                        %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #12 "vn. II" }
-                                        %! applying staff names and clefs
-                                        \set Staff.instrumentName =
-                                        %! applying staff names and clefs
-                                        \markup { \hcenter-in #14 "Violin II" }
-                                        \pitchedTrill
-                                        af'2.
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_STOP
-                                        \f
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \>
-                                        ~
-                                        \startTrillSpan a'
-
-                                        af'4.
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 2]
-
-                                        \pitchedTrill
-                                        g'1
-                                        \stopTrillSpan
-                                        \startTrillSpan a'
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 3]
-
-                                        \pitchedTrill
-                                        cs''2..
-                                        \stopTrillSpan
-                                        \startTrillSpan d''
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 4]
-
-                                        ef'4
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \upbow
-                                        \stopTrillSpan
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #3 #7
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef'8
-                                            [
-
-                                            d'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #2 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            \revert Staff.Stem.stemlet-length
-                                            e'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #1 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
-
-                                        }
-
-                                        e'8
-                                        ~
-
-                                        e'4
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 5]
-
-                                        e'2.
-                                        ~
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            [
-
-                                            f'8.
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #4 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #6 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            \revert Staff.Stem.stemlet-length
-                                            eqs'16
-                                            %! baca.hairpin()
-                                            %! baca.PiecewiseCommand._call(3)
-                                            %! SPANNER_STOP
-                                            \p
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(1)
-                                            \bacaStopTextSpanBCP
-                                            ]
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 6]
-
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \stopStaff \startStaff
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 7]
-
-                                        e'4.
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_STOP
-                                        \f
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \downbow
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak stencil #constante-hairpin
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \<
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #5 #7
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 3/4
-                                        {
-
-                                            fs'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #7 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            gqf'4.
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #6 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #5 #7
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 8]
-
-                                        gqf'4.
-                                        ~
-
-                                        gqf'4
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 9]
-
-                                        gqf'4..
-
-                                        g'16
-                                        %! baca.hairpin()
-                                        %! baca.PiecewiseCommand._call(3)
-                                        %! SPANNER_STOP
-                                        \!
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(1)
-                                        \bacaStopTextSpanBCP
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 10]
-
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \stopStaff \startStaff
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 11]
-
-                                        gqs'4
-                                        \f
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(5)
-                                        - \upbow
-                                        \>
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #3 #5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            gqs'8
-                                            [
-
-                                            f'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #1 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #5 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 12]
-
-                                        ef'4.
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 13]
-
-                                        ef'4.
-                                        ~
-
-                                        ef'4
-                                        ~
-
-                                        \times 2/3
-                                        {
-                                            %! COMMENT_MEASURE_NUMBERS
-                                            %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 14]
-
-                                            ef'4
-
-                                            cs'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(8)
-                                            - \downbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #1 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                        }
-
-                                        cs'4
-                                        ~
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        cs'8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        d'8
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(7)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(7)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(7)
-                                        - \upbow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(3)
-                                        \bacaStopTextSpanBCP
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #4 #5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
-                                        ]
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'8
-                                            [
-
-                                            cqs'8.
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #3 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #2 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af16
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(1)
-                                            \bacaStopTextSpanBCP
-                                            ]
-
-                                        }
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 15]
-
-                                        cs'''2..
-                                        :32
-                                        \p
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \abjad-dashed-line-with-hook
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \baca-text-spanner-left-text "XFB."
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak staff-padding 5
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \startTextSpanOne
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 16]
-
-                                        e'4
-                                        \mf
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak self-alignment-X #left
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \tweak staff-padding 5.5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(6)
-                                        - \downbow
-                                        \>
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(4)
-                                        %! SPANNER_STOP
-                                        \stopTextSpanOne
-                                        ~
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \abjad-solid-line-with-arrow
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \baca-bcp-spanner-left-text #1 #5
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        - \tweak staff-padding 3
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(2)
-                                        \bacaStartTextSpanBCP
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            [
-
-                                            f'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak self-alignment-X #left
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \tweak staff-padding 5.5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(7)
-                                            - \upbow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #4 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-
-                                            \revert Staff.Stem.stemlet-length
-                                            eqs'8
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(3)
-                                            \bacaStopTextSpanBCP
-                                            ~
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \abjad-solid-line-with-arrow
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-left-text #3 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \baca-bcp-spanner-right-text #2 #5
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            - \tweak staff-padding 3
-                                            %! baca.bcps()
-                                            %! baca.BCPCommand._call(2)
-                                            \bacaStartTextSpanBCP
-                                            ]
-
-                                        }
-
-                                        eqs'8
-                                        ~
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        eqs'8.
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        e'16
-                                        %! baca.bcps()
-                                        %! baca.BCPCommand._call(1)
-                                        \bacaStopTextSpanBCP
-                                        ]
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 17]
-
-                                        dqs''2.
-                                        :32
-                                        \p
-                                        ~
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \abjad-dashed-line-with-hook
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \baca-text-spanner-left-text "XFB."
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        - \tweak staff-padding 5
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(2)
-                                        %! SPANNER_START
-                                        \startTextSpanOne
-
-                                        dqs''4.
-                                        :32
-                                        ~
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 18]
-
-                                        dqs''2.
-                                        :32
-                                        %! baca.text_spanner()
-                                        %! baca.PiecewiseCommand._call(4)
-                                        %! SPANNER_STOP
-                                        \stopTextSpanOne
-                                        %! COMMENT_MEASURE_NUMBERS
-                                        %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 19]
-
-                                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                        \once \override MultiMeasureRest.transparent = ##t
-                                        R1 * 1/4
-                                        \bar "||"
-                                        \stopStaff \startStaff
-
-                                    }
-
-                                }
-
-                            }
-
-                        >>
+                        }
 
                     }
 
                     \tag #'voice3
                     {
 
-                        \context Staff = "viola staff"
+                        \context Staff = "percussion 3 staff"
                         {
 
-                            \context Voice = "viola voice"
+                            \context Voice = "percussion 3 voice"
                             {
+                                \staff-line-count 6
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 1]
+                                % [percussion 3 voice measure 1]
 
                                 %! applying staff names and clefs
                                 \set Staff.shortInstrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #12 "va." }
+                                \markup { \hcenter-in #12 "pc. 3" }
                                 %! applying staff names and clefs
                                 \set Staff.instrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #14 "Viola" }
-                                \pitchedTrill
-                                b'2.
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_STOP
+                                \markup { \hcenter-in #14 "Percussion 3" }
+                                \clef "percussion"
+                                a4
                                 \f
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \>
-                                ~
-                                \startTrillSpan cs''
+                                \boxed-markup "drums" 1
 
-                                b'4.
+                                r8
+
+                                r8
+
+                                c'4
+
+                                a4
+
+                                a8
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 2]
+                                % [percussion 3 voice measure 2]
 
-                                \pitchedTrill
-                                c''1
-                                \stopTrillSpan
-                                \startTrillSpan d''
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 3]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r4
 
-                                \pitchedTrill
-                                af'2..
-                                \stopTrillSpan
-                                \startTrillSpan a'
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 4]
-
-                                aqf4
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \upbow
-                                \stopTrillSpan
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #6 #7
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    aqf8
-                                    [
-
-                                    af8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #5 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    bf8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #3 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-                                    ]
-
-                                }
-
-                                bf8
-                                ~
-
-                                bf4
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 5]
-
-                                bf2.
-                                ~
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    bf8
-                                    [
-
-                                    bqf8.
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #2 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #1 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    b16
-                                    %! baca.hairpin()
-                                    %! baca.PiecewiseCommand._call(3)
-                                    %! SPANNER_STOP
-                                    \p
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(1)
-                                    \bacaStopTextSpanBCP
-                                    ]
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 6]
-
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
-                                \stopStaff \startStaff
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 7]
-
-                                bqs4.
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_STOP
-                                \f
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \downbow
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \tweak stencil #constante-hairpin
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \<
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #1 #7
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 3/4
-                                {
-
-                                    a8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #4 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    g4.
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \upbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #6 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #5 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 8]
-
-                                g4.
-                                ~
-
-                                g4
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 9]
-
-                                g4..
-
-                                f16
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(3)
-                                %! SPANNER_STOP
-                                \!
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(1)
-                                \bacaStopTextSpanBCP
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 10]
-
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
-                                \stopStaff \startStaff
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 11]
-
-                                fs4
-                                \f
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(5)
-                                - \upbow
-                                \>
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #3 #5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    fs8
-                                    [
-
-                                    eqs8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #2 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    c8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \upbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #3 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-                                    ]
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 12]
-
-                                c4.
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 13]
-
-                                c4.
-                                ~
-
-                                c4
-                                ~
-
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [viola voice measure 14]
-
-                                    c4
-
-                                    cs8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #1 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
-
-                                cs4
+                                \revert Staff.Stem.stemlet-length
+                                c'8
                                 ~
 
                                 \override Staff.Stem.stemlet-length = 0.75
-                                cs8
+                                c'8
                                 [
 
                                 \revert Staff.Stem.stemlet-length
-                                ef8
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \upbow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(3)
-                                \bacaStopTextSpanBCP
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #5 #5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
+                                r8
                                 ]
 
-                                \times 2/3
-                                {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                r8
+                                [
 
-                                    ef8
-
-                                    d4
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #1 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
+                                \revert Staff.Stem.stemlet-length
+                                a8
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 15]
+                                % [percussion 3 voice measure 3]
 
-                                d8
+                                c'4
 
-                                dqs4
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \upbow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(3)
-                                \bacaStopTextSpanBCP
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #4 #5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                dqs8
-
-                                \times 2/3
-                                {
-
-                                    e8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #3 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    f4
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #2 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #3 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
-
-                                f8
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 16]
-
-                                f4.
-                                ~
-
-                                f4
+                                b'8
                                 ~
 
                                 \override Staff.Stem.stemlet-length = 0.75
-                                f8.
+                                b'8
                                 [
 
                                 \revert Staff.Stem.stemlet-length
-                                fs16
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(1)
-                                \bacaStopTextSpanBCP
+                                a8
+                                ~
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                a8
+                                [
+
+                                \revert Staff.Stem.stemlet-length
+                                c'8
+                                ]
+                                \staff-line-count 2
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 4]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                \mf
+                                - \accent
+                                [
+                                \boxed-markup "congas" 1
+
+                                b16
+
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+                                - \accent
+
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
                                 ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 17]
+                                % [percussion 3 voice measure 5]
 
-                                bqf'2.
-                                :32
-                                \p
-                                ~
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \abjad-dashed-line-with-hook
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \baca-text-spanner-left-text "XFB."
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \tweak staff-padding 5
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \startTextSpanOne
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
 
-                                bqf'4.
-                                :32
-                                ~
+                                b16
+                                - \accent
+
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+
+                                d'16
+
+                                b16
+
+                                d'16
+                                - \accent
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 18]
+                                % [percussion 3 voice measure 6]
 
-                                bqf'2.
-                                :32
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(4)
-                                %! SPANNER_STOP
-                                \stopTextSpanOne
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                - \accent
+                                [
+
+                                b16
+
+                                d'16
+
+                                b16
+                                - \accent
+
+                                d'16
+                                - \accent
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [viola voice measure 19]
+                                % [percussion 3 voice measure 7]
 
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+                                - \accent
+
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+                                - \accent
+
+                                d'16
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! evans.SegmentMaker.comment_measure_numbers()
+                                % [percussion 3 voice measure 8]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                d'16
+                                [
+
+                                b16
+
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                b16
+
+                                d'16
+                                - \accent
+
+                                \revert Staff.Stem.stemlet-length
+                                b16
+                                ]
                                 \bar "||"
-                                \stopStaff \startStaff
 
                             }
 
@@ -2217,606 +963,217 @@
                     \tag #'voice4
                     {
 
-                        \context Staff = "cello staff"
+                        \context Staff = "percussion 4 staff"
                         {
 
-                            \context Voice = "cello voice"
+                            \context Voice = "percussion 4 voice"
                             {
+                                \staff-line-count 1
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 1]
+                                % [percussion 4 voice measure 1]
 
                                 %! applying staff names and clefs
                                 \set Staff.shortInstrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #12 "vc." }
+                                \markup { \hcenter-in #12 "pc. 4" }
                                 %! applying staff names and clefs
                                 \set Staff.instrumentName =
                                 %! applying staff names and clefs
-                                \markup { \hcenter-in #14 "Violoncello" }
-                                \clef "tenor"
-                                \pitchedTrill
-                                g'2.
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_STOP
+                                \markup { \hcenter-in #14 "Percussion 4" }
+                                \clef "percussion"
+                                c'2.
                                 \f
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \>
-                                \stopTextSpan
-                                \stopTextSpanOne
+                                ^ \music-stand-markup-one
                                 ~
-                                \startTrillSpan a'
+                                \boxed-markup "bowed music stand" 1
 
-                                g'4.
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 2]
-
-                                \pitchedTrill
-                                cs''1
-                                \stopTrillSpan
-                                \startTrillSpan d''
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 3]
-
-                                \pitchedTrill
-                                b'2..
-                                \stopTrillSpan
-                                \startTrillSpan cs''
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 4]
-
-                                \clef "bass"
-                                fs4
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \downbow
-                                \stopTrillSpan
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #5 #7
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    fs8
-                                    [
-
-                                    gqf8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \upbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #7 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    g8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #6 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-                                    ]
-
-                                }
-
-                                g8
-                                ~
-
-                                g4
+                                c'4.
                                 ~
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 5]
+                                % [percussion 4 voice measure 2]
 
-                                g2.
-                                ~
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    g8
-                                    [
-
-                                    gqs8.
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #5 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #3 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    f16
-                                    %! baca.hairpin()
-                                    %! baca.PiecewiseCommand._call(3)
-                                    %! SPANNER_STOP
-                                    \p
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(1)
-                                    \bacaStopTextSpanBCP
-                                    ]
-
-                                }
+                                c'2..
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 6]
+                                % [percussion 4 voice measure 3]
 
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
-                                \stopStaff \startStaff
+                                %! applying invisibility
+                                \once \override Rest.transparent = ##t
+                                r1 * 7/16
+
+                                R1 * 7/16
+                                \staff-line-count 2
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 7]
-
-                                ef4.
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_STOP
-                                \f
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak staff-padding 5.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \downbow
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \tweak stencil #constante-hairpin
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \<
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #4 #7
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 3
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \times 3/4
-                                {
-
-                                    cs8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \upbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #6 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    d4.
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #5 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #7 #7
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 3
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 8]
-
-                                d4.
-                                ~
-
-                                d4
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 9]
-
-                                d4..
-
-                                cqs16
-                                %! baca.hairpin()
-                                %! baca.PiecewiseCommand._call(3)
-                                %! SPANNER_STOP
-                                \!
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(1)
-                                \bacaStopTextSpanBCP
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 10]
-
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
-                                \stopStaff \startStaff
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 11]
-
-                                af,4
-                                \f
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \tweak staff-padding 5.0
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(6)
-                                - \downbow
-                                \>
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #1 #5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 2.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
-
-                                \times 2/3
-                                {
-
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    af,8
-                                    [
-
-                                    a,8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \tweak staff-padding 5.0
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(7)
-                                    - \upbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #4 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 2.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                    \revert Staff.Stem.stemlet-length
-                                    b,8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #3 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 2.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-                                    ]
-
-                                }
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 12]
-
-                                b,4.
-                                ~
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 13]
-
-                                b,4.
-                                ~
-
-                                b,4
-                                ~
-
-                                \times 2/3
-                                {
-                                    %! COMMENT_MEASURE_NUMBERS
-                                    %! evans.SegmentMaker.comment_measure_numbers()
-                                    % [cello voice measure 14]
-
-                                    b,4
-
-                                    bf,8
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.0
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    ~
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #2 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 2.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
-
-                                }
-
-                                bf,4
-                                ~
+                                % [percussion 4 voice measure 4]
 
                                 \override Staff.Stem.stemlet-length = 0.75
-                                bf,8
+                                b16
+                                \mf
                                 [
+                                \boxed-markup "bongos" 1
+
+                                d'16
+                                - \accent
+
+                                b16
+
+                                d'16
+
+                                b16
 
                                 \revert Staff.Stem.stemlet-length
-                                bqf,8
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak self-alignment-X #left
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \tweak staff-padding 5.0
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(7)
-                                - \upbow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(3)
-                                \bacaStopTextSpanBCP
-                                ~
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \abjad-solid-line-with-arrow
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \baca-bcp-spanner-left-text #3 #5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                - \tweak staff-padding 2.5
-                                %! baca.bcps()
-                                %! baca.BCPCommand._call(2)
-                                \bacaStartTextSpanBCP
+                                d'16
+                                - \accent
                                 ]
 
-                                \times 2/3
-                                {
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
 
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    bqf,8
-                                    [
+                                d'16
+                                - \accent
 
-                                    c8.
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak self-alignment-X #left
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \tweak staff-padding 5.0
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(8)
-                                    - \downbow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(3)
-                                    \bacaStopTextSpanBCP
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \abjad-solid-line-with-arrow
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-left-text #1 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \baca-bcp-spanner-right-text #5 #5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    - \tweak staff-padding 2.5
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(2)
-                                    \bacaStartTextSpanBCP
+                                b16
 
-                                    \revert Staff.Stem.stemlet-length
-                                    cs16
-                                    %! baca.bcps()
-                                    %! baca.BCPCommand._call(1)
-                                    \bacaStopTextSpanBCP
-                                    ]
+                                d'16
 
-                                }
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 15]
+                                % [percussion 4 voice measure 5]
 
-                                eqs2..
-                                :32
-                                \p
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \abjad-dashed-line-with-hook
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \baca-text-spanner-left-text "XFB."
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                - \tweak staff-padding 5
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(2)
-                                %! SPANNER_START
-                                \startTextSpanOne
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                d'16
+
+                                b16
+
+                                d'16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                d'16
+
+                                b16
+                                - \accent
+
+                                d'16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 16]
+                                % [percussion 4 voice measure 6]
 
-                                d2..
-                                :32
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                d'16
+
+                                b16
+
+                                d'16
+                                - \accent
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                - \accent
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                d'16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                - \accent
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 17]
+                                % [percussion 4 voice measure 7]
 
-                                dqf2.
-                                :32
-                                ~
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
 
-                                dqf4.
-                                :32
+                                d'16
+                                - \accent
+
+                                b16
+
+                                d'16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                ]
+
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
+
+                                d'16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                - \accent
+                                ]
                                 %! COMMENT_MEASURE_NUMBERS
                                 %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 18]
+                                % [percussion 4 voice measure 8]
 
-                                d2.
-                                :32
-                                %! baca.text_spanner()
-                                %! baca.PiecewiseCommand._call(4)
-                                %! SPANNER_STOP
-                                \stopTextSpanOne
-                                %! COMMENT_MEASURE_NUMBERS
-                                %! evans.SegmentMaker.comment_measure_numbers()
-                                % [cello voice measure 19]
+                                \override Staff.Stem.stemlet-length = 0.75
+                                b16
+                                [
 
-                                \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                \once \override MultiMeasureRest.transparent = ##t
-                                R1 * 1/4
+                                d'16
+
+                                b16
+
+                                d'16
+
+                                b16
+                                - \accent
+
+                                d'16
+
+                                b16
+
+                                \revert Staff.Stem.stemlet-length
+                                d'16
+                                ]
                                 \bar "||"
-                                \stopStaff \startStaff
 
                             }
 

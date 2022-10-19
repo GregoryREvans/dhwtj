@@ -118,7 +118,7 @@ breaks = evans.Breaks(
         evans.System(measures=7, lbsd=(114, "(21 30 30 30)"), x_offset=1),
     ),
     time_signatures=dhwtj.all_signatures,
-    default_spacing=(1, 16),
+    default_spacing=(1, 38),
     # spacing=[
     #     (10, (1, 37)),
     # ],

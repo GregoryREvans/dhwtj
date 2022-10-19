@@ -34,7 +34,7 @@ mark_40 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_40).padding = 6
@@ -51,7 +51,7 @@ mark_60 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_60).padding = 6
@@ -68,7 +68,7 @@ mark_66 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_66).padding = 6
@@ -97,7 +97,7 @@ mark_72 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_72).padding = 6
@@ -113,7 +113,7 @@ mark_90 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_90).padding = 6
@@ -130,7 +130,7 @@ mark_108 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_108).padding = 6
@@ -147,7 +147,7 @@ mark_120 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_120).padding = 6
@@ -164,7 +164,7 @@ mark_130 = abjad.LilyPondLiteral(
         r"  }",
         r"}",
     ],
-    format_slot="after",
+    site="after",
 )
 
 # abjad.tweak(mark_130).padding = 6
@@ -198,7 +198,7 @@ start_repeat = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ".|:"',
     ],
-    format_slot="after",
+    site="after",
 )
 
 start_repeat_default = abjad.LilyPondLiteral(
@@ -206,7 +206,7 @@ start_repeat_default = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ".|:"',
     ],
-    format_slot="after",
+    site="after",
 )
 
 start_repeat_before = abjad.LilyPondLiteral(
@@ -215,7 +215,7 @@ start_repeat_before = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ".|:"',
     ],
-    format_slot="before",
+    site="before",
 )
 
 stop_repeat = abjad.LilyPondLiteral(
@@ -224,7 +224,7 @@ stop_repeat = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ":|."',
     ],
-    format_slot="after",
+    site="after",
 )
 
 stop_repeat_default = abjad.LilyPondLiteral(
@@ -232,7 +232,7 @@ stop_repeat_default = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ":|."',
     ],
-    format_slot="after",
+    site="after",
 )
 
 stop_repeat_before = abjad.LilyPondLiteral(
@@ -241,7 +241,7 @@ stop_repeat_before = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ":|."',
     ],
-    format_slot="before",
+    site="before",
 )
 
 middle_repeat = abjad.LilyPondLiteral(
@@ -250,27 +250,27 @@ middle_repeat = abjad.LilyPondLiteral(
         r"\once \override Score.BarLine.thick-thickness = #3",
         r'\bar ":|.|:"',
     ],
-    format_slot="after",
+    site="after",
 )
 
 first_ending_on = abjad.LilyPondLiteral(
     r"""\set Score.repeatCommands = #'((volta "1"))""",
-    format_slot="before",
+    site="before",
 )
 
 second_ending_on = abjad.LilyPondLiteral(
     r"""\set Score.repeatCommands = #'((volta "2"))""",
-    format_slot="before",
+    site="before",
 )
 
 ending_off = abjad.LilyPondLiteral(
     r"""\set Score.repeatCommands = #'((volta #f))""",
-    format_slot="before",
+    site="before",
 )
 
 clef_whitespace = abjad.LilyPondLiteral(
     r"\once \override Staff.Clef.X-extent = ##f \once \override Staff.Clef.extra-offset = #'(-2.25 . 0)",
-    format_slot="absolute_before",
+    site="absolute_before",
 )
 
 tremolo_handler = evans.ArticulationHandler(
@@ -345,158 +345,179 @@ stop_scratch = abjad.StopTextSpan(command=r"\stopTextSpanTwo")
 
 
 def fuse_preprocessor(divisions):
-    divisions = baca.Sequence(divisions)
-    return [divisions.sum()]
+    return [abjad.sequence.sum(divisions)]
 
 
 def fuse_preprocessor_2(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = divisions.partition_by_counts((2,), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (2,), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_preprocessor_3(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = divisions.partition_by_counts((3,), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (3,), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_preprocessor_2_1(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = divisions.partition_by_counts((2, 1), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (2, 1), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_preprocessor_3_1(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = divisions.partition_by_counts((3, 1), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (3, 1), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_preprocessor_3_2(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = divisions.partition_by_counts((3, 2), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (3, 2), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_quarters_preprocessor(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
     return divisions
 
 
 def fuse_quarters_preprocessor_2_1(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((2, 1), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (2, 1), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_quarters_preprocessor_1_2(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((1, 2), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (1, 2), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_quarters_preprocessor_1_1_2(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((1, 1, 2), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (1, 1, 2), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def fuse_quarters_preprocessor_2_2_5(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((2, 2, 5), cyclic=False, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (2, 2, 5), cyclic=False, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def quarters_preprocessor_2_1(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
     temp = []
     for measure in divisions:
-        partitions = measure.flatten(depth=-1).partition_by_counts(
-            (2, 1), cyclic=True, overhang=True
+        partitions = abjad.sequence.flatten(measure, depth=-1)
+        partitions = abjad.sequence.partition_by_counts(
+            partitions,
+            (2, 1),
+            cyclic=True,
+            overhang=True,
         )
-        sums = baca.Sequence(sum(_) for _ in partitions)
+        sums = [sum(_) for _ in partitions]
         temp.append(sums)
-    divisions = baca.Sequence(temp).flatten(depth=-1)
+    divisions = abjad.sequence.flatten(temp, depth=-1)
     return divisions
 
 
 def quarters_preprocessor_2(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
     temp = []
     for measure in divisions:
-        partitions = measure.flatten(depth=-1).partition_by_counts(
-            (2,), cyclic=True, overhang=True
+        partitions = abjad.sequence.flatten(measure, depth=-1)
+        partitions = abjad.sequence.partition_by_counts(
+            partitions,
+            (2,),
+            cyclic=True,
+            overhang=True,
         )
-        sums = baca.Sequence(sum(_) for _ in partitions)
+        sums = [sum(_) for _ in partitions]
         temp.append(sums)
-    divisions = baca.Sequence(temp).flatten(depth=-1)
+    divisions = abjad.sequence.flatten(temp, depth=-1)
     return divisions
 
 
 def pure_quarters_preprocessor(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = baca.Sequence(divisions).flatten(depth=-1)
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
     return divisions
 
 
 def quarters_preprocessor_3_1_2(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
     temp = []
     for measure in divisions:
-        partitions = measure.flatten(depth=-1).partition_by_counts(
-            (3, 1, 2), cyclic=True, overhang=True
+        partitions = abjad.sequence.flatten(measure, depth=-1)
+        partitions = abjad.sequence.partition_by_counts(
+            partitions,
+            (3, 1, 2),
+            cyclic=True,
+            overhang=True,
         )
-        sums = baca.Sequence(sum(_) for _ in partitions)
+        sums = [sum(_) for _ in partitions]
         temp.append(sums)
-    divisions = baca.Sequence(temp).flatten(depth=-1)
+    divisions = abjad.sequence.flatten(temp, depth=-1)
     return divisions
 
 
 def fuse_quarters_preprocessor_3_1(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((3, 1), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (3, 1), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def quarters_preprocessor(divisions):
-    divisions = baca.Sequence(divisions)
-    divisions = baca.Sequence(
-        baca.Sequence(_).quarters(compound=(3, 2)) for _ in divisions
-    )
-    divisions = divisions.flatten(depth=-1)
+    divisions = [baca.sequence.quarters([_], compound=(3, 2)) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
     return divisions
 
 
 def fuse_quarters_preprocessor_2_20(divisions):
-    duration = baca.Sequence(divisions).sum()
-    divisions = baca.Sequence(duration)
-    divisions = baca.Sequence(baca.Sequence(_).quarters() for _ in divisions)
-    divisions = divisions.flatten(depth=-1)
-    divisions = divisions.partition_by_counts((2, 20), cyclic=True, overhang=True)
-    return baca.Sequence(sum(_) for _ in divisions)
+    duration = abjad.sequence.sum(divisions)
+    divisions = [duration]
+    divisions = [baca.sequence.quarters([_]) for _ in divisions]
+    divisions = abjad.sequence.flatten(divisions, depth=-1)
+    divisions = abjad.sequence.partition_by_counts(
+        divisions, (2, 20), cyclic=True, overhang=True
+    )
+    return [sum(_) for _ in divisions]
 
 
 def select_all_first_leaves(selections):
@@ -712,7 +733,7 @@ def chilled_stage_3_bowing(series="A", rotation=0, staff_padding=2):
         series_dict[series].rotate(rotation),
         abjad.tweak(staff_padding).staff_padding,
         bow_change_tweaks=(
-            abjad.tweak(abjad.Left).self_alignment_X,
+            abjad.tweak(abjad.LEFT).self_alignment_X,
             abjad.tweak(bowing_padding).staff_padding,
         ),
     )
@@ -725,10 +746,10 @@ def make_proportional_notation(selections):
 
     for rest in abjad.Selection(selections).leaves(pitched=False):
         transparent_literal = abjad.LilyPondLiteral(
-            r"\once \override Rest.transparent = ##t", format_slot="before"
+            r"\once \override Rest.transparent = ##t", site="before"
         )
         transparent_dots_literal = abjad.LilyPondLiteral(
-            r"\once \override Dots.transparent = ##t", format_slot="before"
+            r"\once \override Dots.transparent = ##t", site="before"
         )
         abjad.attach(transparent_literal, rest)
         abjad.attach(transparent_dots_literal, rest)
@@ -736,7 +757,7 @@ def make_proportional_notation(selections):
     for note in abjad.Selection(selections).leaves(pitched=True):
         abjad.attach(evans.DurationLine(), note)
         style_literal = abjad.LilyPondLiteral(
-            r"\duration-line-style", format_slot="before"
+            r"\duration-line-style", site="before"
         )
         abjad.attach(style_literal, note)
 
@@ -749,24 +770,24 @@ def make_proportaional_global_context(selections):
             continue
         if i != leaves_count:
             bar_literal = abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.stencil = ##f", format_slot="before"
+                r"\once \override Score.BarLine.stencil = ##f", site="before"
             )
             abjad.attach(bar_literal, leaf)
             span_literal = abjad.LilyPondLiteral(
-                r"\once \override Score.SpanBar.stencil = ##f", format_slot="before"
+                r"\once \override Score.SpanBar.stencil = ##f", site="before"
             )
             abjad.attach(span_literal, leaf)
         if i != 0:
             hidden_literal = abjad.LilyPondLiteral(
                 r"\once \override Score.TimeSignature.stencil = ##f",
-                format_slot="before",
+                site="before",
             )
             abjad.attach(hidden_literal, leaf)
 
     first_leaf = abjad.Selection(selections).leaf(0)
     x_literal = abjad.LilyPondLiteral(
         r"\once \override Score.TimeSignature.stencil = #(blank-time-signature)",
-        format_slot="before",
+        site="before",
     )
     abjad.attach(x_literal, first_leaf)
 
@@ -790,8 +811,60 @@ def force_accidental(selections):
             raise Exception(ex)
 
 
-def select_measures(index_list):
-    return lambda _: abjad.Selection(_).leaves().group_by_measure().get(index_list)
+def select_measures(
+    index_list, leaf=None, leaves=None, logical_ties=None, note=None, notes=None
+):
+    if leaf is not None:
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .leaf(leaf)
+        )
+    elif isinstance(leaves, list):
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .leaves()
+            .get(leaves)
+        )
+    elif leaves is True:
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .leaves()
+        )
+    elif logical_ties is True:
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .logical_ties()
+        )
+    elif note is not None:
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .note(note)
+        )
+    elif notes is True:
+        return (
+            lambda _: abjad.Selection(_)
+            .leaves()
+            .group_by_measure()
+            .get(index_list)
+            .notes()
+        )
+    else:
+        return lambda _: abjad.Selection(_).leaves().group_by_measure().get(index_list)
 
 
 hairpins = evans.CyclicList(["<", "<|", "<", "<", "<", "<", "<|", "<"], forget=False)
@@ -859,7 +932,7 @@ start_bis_trill_one = abjad.LilyPondLiteral(
         r"- \tweak bound-details.left.text \double-diamond-parenthesized-top-markup",
         r"\startTrillSpan",
     ],
-    format_slot="after",
+    site="after",
 )
 
 start_bis_trill_two = abjad.LilyPondLiteral(
@@ -867,7 +940,7 @@ start_bis_trill_two = abjad.LilyPondLiteral(
         r"- \tweak bound-details.left.text \diamond-parenthesized-double-diamond-markup",
         r"\startTrillSpan",
     ],
-    format_slot="after",
+    site="after",
 )
 
 stop_bis_trill = abjad.StopTrillSpan()
@@ -941,3 +1014,74 @@ def special_hairpin(selections):
     abjad.attach(abjad.Dynamic("mf"), leaves[5])
     abjad.attach(abjad.StartHairpin("<|"), leaves[5])
     abjad.attach(abjad.Dynamic("f"), leaves[6])
+
+
+def leaf_swells(selections):
+    leaves = abjad.Selection(selections).leaves()
+    cyc_dynamics = evans.CyclicList(["p", "f"], forget=False)
+    cyc_hairpins = evans.CyclicList(["<", ">"], forget=False)
+    for leaf in leaves:
+        dynamic = abjad.Dynamic(cyc_dynamics(r=1)[0])
+        abjad.attach(dynamic, leaf)
+    for leaf in leaves[:-1]:
+        hairpin = abjad.StartHairpin(cyc_hairpins(r=1)[0])
+        abjad.attach(hairpin, leaf)
+
+def center_swell(selections):
+    leaves = abjad.Selection(selections).leaves()
+    first_leaf = abjad.Selection(leaves).leaf(0)
+    center_leaf = abjad.Selection(leaves[len(leaves) // 2]).leaf(0)
+    last_leaf = abjad.Selection(leaves).leaf(-1)
+    cyc_dynamics = evans.CyclicList(["p", "f"], forget=False)
+    cyc_hairpins = evans.CyclicList(["<", ">"], forget=False)
+    important_leaves = [first_leaf, center_leaf, last_leaf]
+    for leaf in important_leaves:
+        dynamic = abjad.Dynamic(cyc_dynamics(r=1)[0])
+        abjad.attach(dynamic, leaf)
+    for leaf in important_leaves[:-1]:
+        hairpin = abjad.StartHairpin(cyc_hairpins(r=1)[0])
+        abjad.attach(hairpin, leaf)
+
+
+def repeating_decimal_from_fraction(numerator, deniminator):
+
+    dividend = numerator
+    num = deniminator
+    zero_count = 0
+    intermediate_divisions = []
+    repeating_digits = ""
+
+    result = dividend // num
+
+    while dividend:
+        if (dividend, result) in intermediate_divisions:
+            index = intermediate_divisions.index((dividend, result))
+            for i in range(index, len(intermediate_divisions)):
+                repeating_digits += str(intermediate_divisions[i][1])
+            break
+        if result == 0:
+            zero_count += 1
+        intermediate_divisions.append((dividend, result))
+        dividend = dividend % num * 10
+        result = dividend // num
+    if (dividend, result) in intermediate_divisions:
+        index = intermediate_divisions.index((dividend, result))
+        return ''.join((str(x[1]) for x in intermediate_divisions[index:]))
+    if result == 0:
+        zero_count += 1
+
+
+def ratio_decimal_vector(numerator, deniminator):
+
+    repeating_digits = repeating_decimal_from_fraction(numerator, deniminator)
+
+    number_list = [int(_) for _ in repeating_digits]
+
+    sums = abjad.math.cumulative_sums(number_list)[1:]
+
+    vector = [0 for _ in range(sums[-1] + 1)]
+
+    for i in sums:
+        vector[i] = 1
+
+    return vector

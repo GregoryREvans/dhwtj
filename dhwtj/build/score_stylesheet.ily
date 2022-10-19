@@ -2,60 +2,49 @@
 \language "english"
 #(set-default-paper-size "arch a")
 #(set-global-staff-size 9)
+afterGraceFraction = #(cons 15 16) % experimental
 
 \include "baca.ily"
 \include "/Users/gregoryevans/evans/lilypond/evans-markups.ily"
 \include "/Users/gregoryevans/evans/lilypond/evans-spanners.ily"
-\include "../../lib.ily"
+%{ \include "../../lib.ily" %}
 \include "evans.ily"
-\include "/Users/gregoryevans/abjad/docs/source/_stylesheets/ekmelos-ji-accidental-markups.ily"
+\include "/Users/gregoryevans/abjad/abjad/_stylesheets/ekmelos-ji-accidental-markups.ily"
 
 \header {
 	tagline = ##f
 	breakbefore = ##t
-	dedication = \markup \override #'(font-name . "Bell MT") \fontsize #5.4 \center-column {"t o   t h e   J A C K   q u a r t e t" \fontsize #3.4 \with-color #white "."}
+	%{ dedication = \markup \override #'(font-name . "Bell MT") \fontsize #5.4 \center-column {"t o   T o n y   A r n o l d" \fontsize #3.4 \with-color #white "."} %}
 	title =  \markup \center-column {
             \override #'(font-name . "Bell MT")
             \fontsize #16
             \line {
                 \concat {
-                P
+                D
                 \hspace #1
-                O
+                H
                 \hspace #1
-                L
+                W
                 \hspace #1
-                I
+                T
                 \hspace #1
-                L
-                \hspace #1
-                L
-                \hspace #1
-				A
-                \hspace #1
-				S
-                \hspace #1
+                J
                 }
             }
 			" "
             \override #'(font-name . "Bell MT Regular")
             \fontsize #1
             \line {
-                o \hspace #1.75
-                e l \hspace #1.75
-                G r a n \hspace #1.75
-				V a c í o
+                p a r t \hspace #1.75
+                t h r e e \hspace #1.75
             }
             " "
             \override #'(font-name . "Bell MT Italic")
             \fontsize #3
             \line {
                 f o r \hspace #2.75
-                t w o \hspace #2.75
-				v i o l i n s , \hspace #2.75
-				v i o l a , \hspace #2.75
-				& \hspace #2.75
-				v i o l o n c e l l o
+                p e r c u s s i o n \hspace #2.75
+				q u a r t e t
             }
     }
 	composer = \markup \override #'(font-name . "Bell MT") \fontsize #5 {"Gregory Rowland Evans (*1995)"}
@@ -151,15 +140,18 @@
 		\override Glissando.thickness = #3 %was 1.8
 		\override Hairpin.to-barline = ##f
 		\override Staff.thickness = #0.5
+
+		\override LyricText.font-size = #-1
+
 		\override MetronomeMark.font-size = 3
 		\override NoteCollision.merge-differently-dotted = ##t % experimental
 		\override NoteColumn.ignore-collision = ##t
 		\shape #'((-2 . 0) (-1 . 0) (-0.5 . 0) (0 . 0)) RepeatTie
 		\override RepeatTie.X-extent = ##f
 		%{ \override SpacingSpanner.spacing-increment = 1.25 %}
-		\override SpacingSpanner.strict-grace-spacing = ##t % trevor
-		\override SpacingSpanner.strict-note-spacing = ##t % trevor
-		\override SpacingSpanner.uniform-stretching = ##t % trevor
+		%{ \override SpacingSpanner.strict-grace-spacing = ##t % trevor %}
+		%{ \override SpacingSpanner.strict-note-spacing = ##t % trevor %}
+		%{ \override SpacingSpanner.uniform-stretching = ##t % trevor %}
 		\override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 20) (padding . 0))
 		\override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum-distance . 20) (padding . 0))
 		\override Stem.stemlet-length = #1.15
@@ -186,12 +178,14 @@
 		autoBeaming = ##f
 		barNumberFormatter = #oval-bar-numbers
 		tupletFullLength = ##t
+		\override LyricHyphen.dash-period = #5 % default is 10
 	}
 	\context {
 		\Voice
 		\remove Forbid_line_break_engraver
 		%{ \consists Duration_line_engraver %}
 		\override Accidental.font-size = 1
+		melismaBusyProperties = #'(slurMelismaBusy, tieMelismaBusy) % leave blank for NO auto melisma or include what should be considered auto
 	}
 	\context {
 		\Staff
@@ -226,7 +220,7 @@
             \override #'(font-name . "Bell MT")
             \concat {
                 \override #'(font-name . "Bell MT Italic")
-                dhwtj
+                dhwtj \hspace #1 part \hspace #1 two
                 \hspace #3
                 —
                 \hspace #3
